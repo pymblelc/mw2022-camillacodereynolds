@@ -1,0 +1,39 @@
+body{
+    background-color: lightblue
+}
+
+h1{
+    color: rgb(252, 252, 252);
+    font-size: 40px;
+    font-family: 'Times New Roman', monospace;
+    text-align: left;
+}
+
+.sign-up{
+position:relative;
+border: 30px
+
+
+}
+
+.login-form{
+    text-align: center;
+    
+}
+
+#btnSubmit{
+height: 50px;
+width:80px;
+}
+
+#btnLoginForm{
+    height: 50px;
+    width:80px;
+    }
+
+#findMatchbtn{
+    height: 50px;
+    width:120px;
+    }
+
+   

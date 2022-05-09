@@ -1,1 +1,66 @@
-<!-- Add your website root here -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Major project</title>
+    <link rel="stylesheet" href="css/majorProject.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+      integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <!-- Hello world -->
+  
+  <body>
+    <div class="sign-up" id="sign-up-form" >
+      <h1>Sign Up</h1>
+      <h2>Add your personal details below</h2>
+        <label for="username"> Username: </label>
+        <input id="Username" name="username" type="text" />
+        <label for="firstName"> First Name: </label>
+        <input id="FirstName" name="firstname" type="text" />
+        <label for="lastName"> Last Name: </label>
+        <input id="LastName" name="lastname" type="text" />
+        <label for="gender"> Gender: </label>
+        <input id="Gender" name="gender" type="text" />
+        <label for="age"> Age: </label>
+        <input id="Age" name="age" type="text" />
+        <label for="dateOfBirth"> Date of Birth: </label>
+        <input id="DateOfBirth" name="dateOfBirth" type="text" />
+        <label for="password"> Password: </label>
+        <input id="Password" name="Password" type="text" />
+
+
+      <div><button id="btnSubmit">Submit</button></div>
+    </div>
+
+
+    <div class="Login" id="login-form">
+      <h1>Login</h1>
+      <label for="username"> Username: </label>
+      <input id="Username_l" name="username" type="text" />
+      <label for="password"> Password: </label>
+      <input id="Password_l" name="Password" type="text" />
+
+      <div><button id="btnLoginForm">Login</button></div>
+    </div>
+
+    <div class = "home_page" id = "home-page">
+        <h1 id="welcome_banner"> Welcome </h1>
+        <p id = "age_message"> Click to find a match based on your age!</p>
+        <div><button id="findMatchbtn">Find Match</button></div>
+        <p id = "matches"></p>
+    </div>
+
+
+    
+    <script type="text/javascript" src="js/majorProject.js"></script> 
+    <script type="text/css" src="js/majorProject.cs"></script> 
+  </body>
+</html>
