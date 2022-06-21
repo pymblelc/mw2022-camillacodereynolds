@@ -557,28 +557,37 @@ $("#submit").click(function () {
       }
     };
   });
-
-
-  
-  //Add stuff in here one the submit button is pressed (i.e return to the start of the survey or show a message saying survey complete)
+//Add stuff in here one the submit button is pressed (i.e return to the start of the survey or show a message saying survey complete)
 });
+
+
+
 
 //overall match 
 function OverallMatch(data) {
   logged_in_user = global_user_logged_in;
+  logged_in_user_answers = null;
+
+  // Get the current logged in users answers
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].username == logged_in_user.username) {
+      logged_in_user_answers = data[i];
+    }
+  }
+
   var matches = [];
   for (var i = 0; i < data.length; i++) {
     //check if any users have the same surevy results and display the username that is matched
     console.log(data[i])
-    console.log(logged_in_user)
+    console.log(logged_in_user_answers)
     if (
-      data[i].question_one == logged_in_user.q1_response &&
+      data[i].question_one == logged_in_user_answers.question_one &&
       data[i].username != logged_in_user.username){
       matches.push(data[i].username);
     }
   }
   console.log(matches);
-  document.getElementById("findOverallMatch").innerHTML = findOverallMatch;
+  document.getElementById("BigMatch").innerHTML = matches;
 }
 
 
