@@ -18,7 +18,9 @@
 
 <!--sign up html-->
 <body>
-  <div class="sign-up" id="sign-up-form" >
+  <div class="sign-up" id="sign-up-form hidden" >
+    <h1>Sign Up</h1>
+    <h2>Add your personal details below</h2>
       <label for="username"> Username: </label>
       <input id="Username" name="username" type="text" />
       <label for="firstName"> First Name: </label>
@@ -34,27 +36,33 @@
       <label for="password"> Password: </label>
       <input id="Password" name="Password" type="text" />
 
+      <div><button id="CreateAccount">Sign up</button>
+
+
 
     <div><button id="btnSubmit">Submit</button></div>
   </div>
 
 <!--login in html-->
-<div class="Login" id="login-form">
+<div class="Login" id="Login-form hidden">
+  <h1>Login</h1>
   <label for="username"> Username: </label>
   <input id="Username_l" name="username" type="text" />
   <label for="password"> Password: </label>
   <input id="Password_l" name="Password" type="text" />
 
+  <div><button id="OpenLogin">Login</button>
+
+
   <div><button id="btnLoginForm">Login</button></div>
 </div>
 
 
-<!--very very start up page -->
+<!--very very start up page-->
 <div class = "start_up" id="start-up">
   <h1>Welcome to friendable</h1>
-  <div><button id="OpenLogin">Login</button>
-  <div><button id="CreateAccount">Sign up</button>
-</div> 
+
+</div>
 
 
 
@@ -68,10 +76,6 @@
         <p id = "Gendermatches"></p>
         <div><button id="findMatchbtnOppositeGender">Find Opposite gender</button></div>
         <p id = "OppositeGendermatches"></p>
-        <div><button id="findOverallMatch">BIG MATCH</button></div>
-        <p id = "findOverallMatch"></p>
-
-
 
       <div class = "original_page" id = "original-page">
 
@@ -129,7 +133,7 @@
       </div>
       <div class="end">
           <h1>Thank You</h1>
-          <button id="submit">Submit</button>
+          <button id="btnSubmitAnswers">Submit</button>
   
       </div>
 

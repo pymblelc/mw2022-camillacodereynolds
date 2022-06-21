@@ -1,9 +1,13 @@
 var apikey = "622e99eadced170e8c83a23a";
 var url = "https://careynolds-2125.restdb.io/rest/profiles";
 
+var apikey2 = "74c3d850e010da15a3c6fc5248fa20fb09854"
 var url2 = "https://careynolds-2125.restdb.io/rest/answers";
 
 var global_user_logged_in;
+
+
+
 
 //hiding the elements of the homepage until someone logs in
 function hide_home_page() {
@@ -12,8 +16,6 @@ function hide_home_page() {
     home_page_elements[i].style.display = "none";
   }
 }
-
-
 
 //hides the sign in and sign up page when first entering the website 
 function show_start_up_page(){
@@ -29,23 +31,23 @@ function show_start_up_page(){
   for (var i = 0; i < login_up_elements.length; i++) {
     login_up_elements[i].style.display = "none";
   }
-}
 
-//
+
+}
 
 //show and hide login and signup
 
 $("#OpenLogin").click(function(){
   $('.Login').show()
   $("#OpenLogin").hide()
-
+  $("#CreateAccount").hide()
 })
 
 $("#CreateAccount").click(function(){
   console.log('clicking button');
   $('.sign-up').show()
   $("#CreateAccount").hide()
-
+  $('#OpenLogin').hide()
 })
 
 
@@ -74,7 +76,8 @@ function addProfiles(item, url, apikey) {
   });
 }
 
-function add_dummy_response(item2, url2, apikey) {
+//adding a profile to allow the username of a user to go to the other database 
+function add_dummy_response(item2, url2, apikey2) {
   var settings2 = {
     async: true,
     crossDomain: true,
@@ -82,7 +85,7 @@ function add_dummy_response(item2, url2, apikey) {
     method: "POST",
     headers: {
       "content-type": "application/json",
-      "x-apikey": apikey,
+      "x-apikey": apikey2,
       "cache-control": "no-cache",
     },
     processData: false,
@@ -95,6 +98,26 @@ function add_dummy_response(item2, url2, apikey) {
   });
 
 }
+
+//when clicking btnSubmit make all the entered values go to the database to establish a profile
+$("#btnSubmit").click(function () {
+  console.log("submitted");
+  var tempItem = {
+    username: $("#Username").val(),
+    firstname: $("#FirstName").val(),
+    lastname: $("#LastName").val(),
+    gender: $("#Gender").val(),
+    age: $("#Age").val(),
+    birthMonth: $("#BirthMonth").val(),
+    password: $("#Password").val(),
+  };
+
+  addProfiles(tempItem, url, apikey);
+});
+
+
+
+//^^^ use this for surevy values??????
 
 //checking the logged user with database users
 function Login(url, apikey, username, password) {
@@ -142,8 +165,6 @@ function user_home_page_function(user_logged_in, database) {
     login_up_elements[i].style.display = "none";
   }
 
-
-
   //Showing the home page
   var home_page_elements = document.getElementsByClassName("home_page");
   for (var i = 0; i < home_page_elements.length; i++) {
@@ -152,7 +173,6 @@ function user_home_page_function(user_logged_in, database) {
 
   //^^^^^ 
 
-
   //welcome message = when the logged in user in detected show their a welcome message with their first and last name
   welcome_message =
     "Welcome " + user_logged_in.firstname + user_logged_in.lastname + " !";
@@ -160,38 +180,6 @@ function user_home_page_function(user_logged_in, database) {
   document.getElementById("welcome_banner").innerHTML = welcome_message;
   global_user_logged_in = user_logged_in;
 }
-
-//when clicking btnSubmit make all the entered values go to the database to establish a profile
-$("#btnSubmit").click(function () {
-  
-  var tempItem = {
-    username: $("#Username").val(),
-    firstname: $("#FirstName").val(),
-    lastname: $("#LastName").val(),
-    gender: $("#Gender").val(),
-    age: $("#Age").val(),
-    birthMonth: $("#BirthMonth").val(),
-    password: $("#Password").val(),
-  };
-
-  addProfiles(tempItem, url, apikey);
-
-  
-  var tempItem2 = {
-    username: $("#Username").val(),
-    question_one: "Blank",
-    question_two: "Blank",
-    question_three: "Blank",
-    question_four: "Blank",
-    question_five: "Blank",
-  }
-  
-  add_dummy_response(tempItem2, url2, apikey);
-
-  console.log("submitted");
-});
-
-//^^^ use this for surevy values??????
 
 //when submitting the login require the username and password values entered and call login function
 $("#btnLoginForm").click(function () {
@@ -341,75 +329,47 @@ const q5 = document.querySelector(".q5");
 const survey = document.querySelector(".survey");
 const end = document.querySelector(".end");
 
-
-//Adds the currently logged in users' responses to the answers database. 
-function add_survey_response(id_value, q1_response_v, q2_response_v, q3_response_v, q4_response_v, q5_response_v) {
-
-  var responseItem = {
-    username: global_user_logged_in.username,
-    question_one: q1_response_v,
-    question_two: q2_response_v,
-    question_three: q3_response_v,
-    question_four: q4_response_v,
-    question_five: q5_response_v
-  };
-
-  //url needs to have the unique ID of the specific record so that only this record gets updated. 
-  url_unique = url2 + "/" + id_value;
-
-  console.log(url_unique);
-
-  var settings3 = {
-    "async": true,
-    "crossDomain": true,
-    "url": url_unique,
-    "method": "PUT",
-    "headers": {
-      "content-type": "application/json",
-      "x-apikey": apikey,
-      "cache-control": "no-cache"
-    },
-    "processData": false,
-    "data": JSON.stringify(responseItem)
-  }
-  
-  $.ajax(settings3).done(function (response) {
-    console.log("Response successfully added");
-    console.log(response);
-  });
+function add_survey_response(username, question, answer) {
+  console.log(username)
+  console.log(question)
+  console.log(answer)
 
 }
 
+//const summer = document.querySelector("Summer")
 
 
-var q1_response = 'nothing';
-var q2_response = 'nothing';
-var q3_response = 'nothing';
-var q4_response = 'nothing';
-var q5_response = 'nothing';
+//First question
+/*
+ul_1.addEventListener("click", function () {
+  console.log('click question 1');
+  q1.style.display = "none";
+  q2.style.display = "block";
+});
+*/
 
 //question 1 event handlers 
 
 $("#Summer").click(function () {
-  q1_response = "Summer";
+  add_survey_response("user", "question", "answer")
   q1.style.display = "none";
   q2.style.display = "block";
 });
 
 $("#Winter").click(function () {
-  q1_response = "Winter";
+  add_survey_response("user", "question", "answer")
   q1.style.display = "none";
   q2.style.display = "block";
 });
 
 $("#Autumn").click(function () {
-  q1_response = "Autumn";
+  add_survey_response("user", "question", "answer")
   q1.style.display = "none";
   q2.style.display = "block";
 });
 
 $("#Spring").click(function () {
-  q1_response = "Spring";
+  add_survey_response("user", "question", "answer")
   q1.style.display = "none";
   q2.style.display = "block";
 });
@@ -417,25 +377,25 @@ $("#Spring").click(function () {
 //question 2 event handlers 
 
 $("#FamFriends").click(function () {
-  q2_response = "FamFriends";
+  add_survey_response("user", "question", "answer")
   q2.style.display = "none";
   q3.style.display = "block";
 });
 
 $("#Working").click(function () {
-  q2_response = "Working";
+  add_survey_response("user", "question", "answer")
   q2.style.display = "none";
   q3.style.display = "block";
 });
 
 $("#Relaxing").click(function () {
-  q2_response = "Relaxing";
+  add_survey_response("user", "question", "answer")
   q2.style.display = "none";
   q3.style.display = "block";
 });
 
 $("#Adventurous").click(function () {
-  q2_response = "Adventurous";
+  add_survey_response("user", "question", "answer")
   q2.style.display = "none";
   q3.style.display = "block";
 });
@@ -443,51 +403,51 @@ $("#Adventurous").click(function () {
 //question 3 event handlers 
 
 $("#Sunrise").click(function () {
-  q3_response = "Sunrise";
+  add_survey_response("user", "question", "answer")
   q3.style.display = "none";
   q4.style.display = "block";
 });
 
 $("#Sunset").click(function () {
-  q3_response = "Sunset";
+  add_survey_response("user", "question", "answer")
   q3.style.display = "none";
   q4.style.display = "block";
 });
 
 $("#Night").click(function () {
-  q3_response = "Night";
+  add_survey_response("user", "question", "answer")
   q3.style.display = "none";
   q4.style.display = "block";
 });
 
 $("#Day").click(function () {
-  q3_response = "Day";
+  add_survey_response("user", "question", "answer")
   q3.style.display = "none";
   q4.style.display = "block";
 });
 
 //question 4 event handlers 
 
-$("#Shows").click(function () {
-  q4_response = "Show";
+$("#Show").click(function () {
+  add_survey_response("user", "question", "answer")
   q4.style.display = "none";
   q5.style.display = "block";
 });
 
 $("#Theatre").click(function () {
-  q4_response = "Theatre";
+  add_survey_response("user", "question", "answer")
   q4.style.display = "none";
   q5.style.display = "block";
 });
 
 $("#Reading").click(function () {
-  q4_response = "Reading";
+  add_survey_response("user", "question", "answer")
   q4.style.display = "none";
   q5.style.display = "block";
 });
 
 $("#Music").click(function () {
-  q4_response = "Music";
+  add_survey_response("user", "question", "answer")
   q4.style.display = "none";
   q5.style.display = "block";
 });
@@ -495,122 +455,101 @@ $("#Music").click(function () {
 //question 5 event handlers 
 
 $("#Visiting").click(function () {
-  q5_response = "Visiting";
+  add_survey_response("user", "question", "answer")
   q5.style.display = "none";
   survey.style.display = "none";
   end.style.display = "block";
 });
 
 $("#Sites").click(function () {
-  q5_response = "Sites";
+  add_survey_response("user", "question", "answer")
   q5.style.display = "none";
   survey.style.display = "none";
   end.style.display = "block";
 });
 
 $("#Tropical").click(function () {
-  q5_response = "Tropical";
+  add_survey_response("user", "question", "answer")
   q5.style.display = "none";
   survey.style.display = "none";
   end.style.display = "block";
 });
 
 $("#Ski").click(function () {
-  q5_response = "Ski";
+  add_survey_response("user", "question", "answer")
   q5.style.display = "none";
   survey.style.display = "none";
   end.style.display = "block";
 });
 
-//Submit button
-$("#submit").click(function () {
-  console.log("Check point 1")
+/*adding a function to get survey responses into the new database 
+function add_survey_response (item,url, apikey){
+  var jsondata = {"field1": "new value","field2": "xxx"};
   var settings = {
-    async: true,
-    crossDomain: true,
-    url: url2,
-    method: "GET",
-    headers: {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://careynolds-2125.restdb.io/rest/answers/(ObjectID)",
+    "method": "PUT",
+    "headers": {
       "content-type": "application/json",
-      "x-apikey": apikey,
-      "cache-control": "no-cache",
+      "x-apikey": "<your CORS apikey here>",
+      "cache-control": "no-cache"
     },
-  };
-
-  $.ajax(settings).done(function (response) {
-    console.log("Check point 2")
-    console.log("Gets the entire 'answers' database");
-    console.log(response);
-
-    console.log("Check point 3")
-    console.log(global_user_logged_in)
-
-    //Finds the currently logged in user from the database and then calls 'add_survey_response' function which adds their responses to the 
-    //answers database. 
-    for (var i = 0; i < response.length; i++) {
-      if (
-        response[i].username == global_user_logged_in.username
-      ) {
-        // unique ID of the record containing the logged in users' username
-        id_value = response[i]._id;
-        add_survey_response(id_value, q1_response, q2_response, q3_response, q4_response, q5_response);
-      }
-    };
-  });
-
-
-  
-  //Add stuff in here one the submit button is pressed (i.e return to the start of the survey or show a message saying survey complete)
-});
-
-//overall match 
-function OverallMatch(data) {
-  logged_in_user = global_user_logged_in;
-  var matches = [];
-  for (var i = 0; i < data.length; i++) {
-    //check if any users have the same surevy results and display the username that is matched
-    console.log(data[i])
-    console.log(logged_in_user)
-    if (
-      data[i].question_one == logged_in_user.q1_response &&
-      data[i].username != logged_in_user.username){
-      matches.push(data[i].username);
-    }
+    "processData": false,
+    "data": JSON.stringify(jsondata)
   }
-  console.log(matches);
-  document.getElementById("findOverallMatch").innerHTML = findOverallMatch;
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+  
 }
 
+add_survey_response(tempItem, url, apikey) */
 
-
-//when clicking button to find a match based off age call the matching age function
-$("#findOverallMatch").click(function () {
-  var settings = {
-    async: true,
-    crossDomain: true,
-    url: url2,
-    method: "GET",
-    headers: {
-      "content-type": "application/json",
-      "x-apikey": apikey,
-      "cache-control": "no-cache",
-    },
+  /* Survey helps
+  let answers = {
+    favourtieFood: "asdas",
+    age: 15,
+    user: "mr-josh"
   };
 
-  $.ajax(settings).done(function (response) {
-    console.log("trying to do big match");
-    console.log(response);
-    OverallMatch(response);
-  });
+  // Post it to a new restDb table called survey answers*/
+
+  // Get the signup form div
+
+
+let signup_form = document.getElementById("sign-up-form");
+let signup_button = document.getElementById("CreateAccount");
+let login_form = document.getElementById("Login-form");
+let login_button = document.getElementById("OpenLogin");
+
+//let see_profile = document.getElementById("GoToProfile");
+
+
+signup_button.addEventListener("click", function() {
+    console.log(signup_form.classList.contains("hidden"));
+    // If singup form has hidden class (true) then remove the class to show the element
+    if (signup_form.classList.contains("hidden")) {
+        signup_form.classList.remove("hidden")
+    }
+    else {
+        signup_form.classList.add("hidden");
+    }
+    
+    // If signup form does not have hidden class (false) add the the class to hide the element
+
+    // signup_form.classList.add("hidden")
+    // signup_form.classList.remove("hidden")
 });
 
-
-
-
-
-
-
-
-
-
+login_button.addEventListener("click", function(){
+    console.log(login_form.classList.contains("hidden"));
+    if (login_form.classList.contains("hidden")){
+        login_form.classList.remove("hidden")
+    }
+    else{
+        login_form.classList.add("hidden");
+    }
+})
 
