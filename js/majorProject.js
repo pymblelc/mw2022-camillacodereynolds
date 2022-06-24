@@ -16,6 +16,7 @@ function hide_home_page() {
 
 
 //hides the sign in and sign up page when first entering the website 
+/* - add back in later
 function show_start_up_page(){
   var start_up_elements = document.getElementsByClassName("start_up");
   for (var i = 0; i<start_up_elements.length; i++){
@@ -30,11 +31,11 @@ function show_start_up_page(){
     login_up_elements[i].style.display = "none";
   }
 }
-
-//
+*/
 
 //show and hide login and signup
 
+/* remove 
 $("#OpenLogin").click(function(){
   $('.Login').show()
   $("#OpenLogin").hide()
@@ -46,11 +47,11 @@ $("#CreateAccount").click(function(){
   $('.sign-up').show()
   $("#CreateAccount").hide()
 
-})
+})*/
 
 
 //calling the very original page 
-show_start_up_page();
+//show_start_up_page();
 
 
 function addProfiles(item, url, apikey) {
@@ -142,7 +143,13 @@ function user_home_page_function(user_logged_in, database) {
     login_up_elements[i].style.display = "none";
   }
 
+  //check why this doesnt work
+  var Start_up_elements = document.getElementsByClassName("Start_up");
+  for (var i = 0; i < Start_up_elements.length; i++) {
+    Start_up_elements[i].style.display = "none";
+  }
 
+//hiding the headings 
 
   //Showing the home page
   var home_page_elements = document.getElementsByClassName("home_page");

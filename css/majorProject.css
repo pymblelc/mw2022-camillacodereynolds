@@ -1,55 +1,85 @@
 
 h1{
   color:black;
-  font-size: 40px;
-  position: relative;
-  font-family: 'Times New Roman', monospace;
+  font-size: 60px;
+  position: absolute;
+  top: 37px;
+  left: 463px;
+  font-family: "Papyrus", fantasy;
   text-align: center;
   border-color: lightblue;
-  background-color: lightblue;
 }
 
-#OpenLogin{
-height: 50px;
-width: 100px;
-border: 2mm;
-position: relative;
+h2{
+  color:black;
+  font-size: 30px;
+  position: absolute;
+  top: 120px;
+  left: 584px;
+  font-family: "Papyrus", fantasy;
+  text-align: center;
+  border-color: lightblue;
 }
 
-#CreateAccount{
-height: 50px;
-width: 100px;
-border: 2mm;
-position: relative;
+body {
+  background-image: url("Friendable.jpg");
+
+ }
+
+input{
+  padding: 3px;
+  box-shadow: 3px 3px 5px grey;
+  font-size: 14px;
+  font-weight: 600;
+  width: 300px;
 }
 
-
-
+label{
+  color: navy;
+  font-weight: bold;
+  display: block;
+  padding:4px;
+  font-size: 15px;
+}
 
 
 .sign-up{
-position:left;
-border: 30px;
-background-color: lightblue;
+  position:absolute;
+  top: 200px;
+  left: 800px;
 }
 
-
-
-#Login{
-  text-align: center;
-  border-radius: 30px;
-
-  
+.Login{
+  left:380px;
+  top:200px;
+  position:absolute; 
 }
 
 #btnSubmit{
-height: 50px;
-width:80px;
+  padding: 10px;
+  border: 1px solid gray;
+  background-color:lightblue;
+  border-radius: 5px;
+  font: inherit;
 }
 
+#btnSubmit:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+
 #btnLoginForm{
-  height: 50px;
-  width:80px;
+  padding: 10px;
+  border: 1px solid gray;
+  background-color:lightblue;
+  border-radius: 5px;
+  font: inherit;
+  }
+
+  #btnLoginForm:hover {
+    background-color: grey;
+    box-shadow: 3px 3px 5px grey;
   }
 
 #findMatchbtn{
@@ -85,4 +115,55 @@ width:80px;
 
 .end {
   display: none;
+}
+
+
+
+
+/* comment back in for css of the original login and sign up
+body, html {
+  height: 100%;
+}
+
+
+.container {
+  position: absolute;
+  width: 20%;
+  left:40px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  left: 40px
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
