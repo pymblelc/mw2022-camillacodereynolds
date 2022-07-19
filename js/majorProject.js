@@ -13,6 +13,15 @@ function hide_home_page() {
   }
 }
 
+function hide_home_Navigation() {
+  var home_navigation_elements = document.getElementsByClassName("homeNavigation");
+  for (var i = 0; i < home_page_elements.length; i++) {
+    home_navigation_elements[i].style.display = "none";
+  }
+}
+
+
+
 
 
 //hides the sign in and sign up page when first entering the website 
@@ -75,7 +84,7 @@ function addProfiles(item, url, apikey) {
   });
 }
 
-function add_dummy_response(item2, url2, apikey) {
+function add_second_response(item2, url2, apikey) {
   var settings2 = {
     async: true,
     crossDomain: true,
@@ -91,7 +100,7 @@ function add_dummy_response(item2, url2, apikey) {
   };
 
   $.ajax(settings2).done(function (response) {
-    console.log("Dummy response successfully added");
+    console.log("Second username successfully added to the db");
     console.log(response);
   });
 
@@ -146,7 +155,7 @@ function user_home_page_function(user_logged_in, database) {
   //check why this doesnt work
   var Start_up_elements = document.getElementsByClassName("Start_up");
   for (var i = 0; i < Start_up_elements.length; i++) {
-    Start_up_elements[i].style.display = "none";
+    Start_up_elements[i].style.display = "block";
   }
 
 //hiding the headings 
@@ -157,6 +166,12 @@ function user_home_page_function(user_logged_in, database) {
     home_page_elements[i].style.display = "block";
   }
 
+   //Showing the nav bar
+   var home_navigation_elements = document.getElementsByClassName("homeNavigation");
+   for (var i = 0; i < home_navigation_elements.length; i++) {
+     home_navigation_elements[i].style.display = "block";
+   }
+
   //^^^^^ 
 
 
@@ -166,7 +181,45 @@ function user_home_page_function(user_logged_in, database) {
   console.log(welcome_message);
   document.getElementById("welcome_banner").innerHTML = welcome_message;
   global_user_logged_in = user_logged_in;
+  
+
+  welcome_name =
+  "Name" + ": "+ user_logged_in.firstname ;
+  console.log(welcome_name);
+  document.getElementById("welcome_name").innerHTML = welcome_name;
+  global_user_logged_in = user_logged_in;
+
+  welcome_lastname =
+"Last Name" + ": " + user_logged_in.lastname ;
+console.log(welcome_lastname);
+document.getElementById("welcome_lastname").innerHTML = welcome_lastname;
+global_user_logged_in = user_logged_in;
+
+welcome_gender =
+"Gender" + ": " + user_logged_in.gender ;
+console.log(welcome_gender);
+document.getElementById("welcome_gender").innerHTML = welcome_gender;
+global_user_logged_in = user_logged_in;
+
+welcome_age =
+"Age" + ": " + user_logged_in.age ;
+console.log(welcome_age);
+document.getElementById("welcome_age").innerHTML = welcome_age;
+global_user_logged_in = user_logged_in;
+
+welcome_birthmonth =
+"Birth Month" + ": " + user_logged_in.birthMonth ;
+console.log(welcome_birthmonth);
+document.getElementById("welcome_birthmonth").innerHTML = welcome_birthmonth;
+global_user_logged_in = user_logged_in;
+
+
+
+
+
 }
+
+
 
 //when clicking btnSubmit make all the entered values go to the database to establish a profile
 $("#btnSubmit").click(function () {
@@ -193,7 +246,7 @@ $("#btnSubmit").click(function () {
     question_five: "Blank",
   }
   
-  add_dummy_response(tempItem2, url2, apikey);
+  add_second_response(tempItem2, url2, apikey);
 
   console.log("submitted");
 });
@@ -202,6 +255,8 @@ $("#btnSubmit").click(function () {
 
 //when submitting the login require the username and password values entered and call login function
 $("#btnLoginForm").click(function () {
+  $("#logoSmall").hide();
+  $("#homeLogo").show();
   console.log("you are logging in");
   var user = $("#Username_l").val();
   var pass = $("#Password_l").val();
@@ -324,6 +379,46 @@ $("#findMatchbtnOppositeGender").click(function () {
     console.log("Collecting all users .. now time to match opposite gender");
     console.log(response);
     matching_OppositeGender(response);
+  });
+});
+
+
+//finding matches based on the same birthday moth 
+function matching_birthMonth(data) {
+  logged_in_user = global_user_logged_in;
+  var BirthMonthmatches = [];
+  for (var i = 0; i < data.length; i++) {
+    //check any users that are male and display their username
+    if (
+      data[i].birthMonth == logged_in_user.birthMonth &&
+      data[i].username != logged_in_user.username
+    ) {
+      BirthMonthmatches.push(data[i].username);
+    }
+  }
+  console.log(matches);
+  document.getElementById("BirthMonthmatches").innerHTML = BirthMonthmatches;
+}
+
+//when clicking button to find a match based off gender call the gender matching function
+
+$("#findMatchbtnBirthMonth").click(function () {
+  var settings = {
+    async: true,
+    crossDomain: true,
+    url: url,
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      "x-apikey": apikey,
+      "cache-control": "no-cache",
+    },
+  };
+
+  $.ajax(settings).done(function (response) {
+    console.log("Collecting all users .. now time to match birth month");
+    console.log(response);
+    matching_birthMonth(response);
   });
 });
 
@@ -504,33 +599,31 @@ $("#Music").click(function () {
 $("#Visiting").click(function () {
   q5_response = "Visiting";
   q5.style.display = "none";
-  survey.style.display = "none";
   end.style.display = "block";
 });
 
 $("#Sites").click(function () {
   q5_response = "Sites";
   q5.style.display = "none";
-  survey.style.display = "none";
   end.style.display = "block";
 });
 
 $("#Tropical").click(function () {
   q5_response = "Tropical";
   q5.style.display = "none";
-  survey.style.display = "none";
   end.style.display = "block";
 });
 
 $("#Ski").click(function () {
   q5_response = "Ski";
   q5.style.display = "none";
-  survey.style.display = "none";
   end.style.display = "block";
 });
 
 //Submit button
 $("#submit").click(function () {
+  q1.style.display = "block";
+  end.style.display="none";
   console.log("Check point 1")
   var settings = {
     async: true,
@@ -570,8 +663,218 @@ $("#submit").click(function () {
 
 
 
-//overall match 
-function OverallMatch(data) {
+//overall match that matched users who have all five survey questions the same 
+function FirstMatch(data) {
+  logged_in_user = global_user_logged_in;
+  logged_in_user_answers = null;
+
+  // Get the current logged in users answers
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].username == logged_in_user.username) {
+      logged_in_user_answers = data[i];
+    }
+  }
+
+  var matches = [];
+  for (var i = 0; i < data.length; i++) {
+    //check if any users have the same surevy results and display the username that is matched
+    console.log(data[i])
+    console.log(logged_in_user_answers)
+    if (
+      data[i].question_one == logged_in_user_answers.question_one &&
+      data[i].question_two == logged_in_user_answers.question_two&&
+      data[i].question_three == logged_in_user_answers.question_three&&
+      data[i].question_four == logged_in_user_answers.question_four&&
+      data[i].question_five == logged_in_user_answers.question_five&&
+      data[i].username != logged_in_user.username){
+      matches.push(data[i].username);
+    }
+  }
+  console.log(matches);
+  document.getElementById("FirstOverallMatch").innerHTML = matches; //make sure that the element ID is different to the button ID otherwise the result will turn up as the button
+}
+
+
+
+//when clicking button for the big match find a match based off a user has all the same survey results 
+$("#FirstMatch").click(function () {
+  var settings = {
+    async: true,
+    crossDomain: true,
+    url: url2,
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      "x-apikey": apikey,
+      "cache-control": "no-cache",
+    },
+  };
+
+  $.ajax(settings).done(function (response) {
+    console.log("trying to do big match");
+    console.log(response);
+    FirstMatch(response);
+  });
+});
+
+//second overall match that matches uses with four of the same survey results 
+function SecondMatch(data) {
+  logged_in_user = global_user_logged_in;
+  logged_in_user_answers = null;
+
+  // Get the current logged in users answers
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].username == logged_in_user.username) {
+      logged_in_user_answers = data[i];
+    }
+  }
+
+  var matches = [];
+  for (var i = 0; i < data.length; i++) {
+    //check if any users have the same surevy results and display the username that is matched
+    console.log(data[i])
+    console.log(logged_in_user_answers)
+    if (
+      data[i].question_one == logged_in_user_answers.question_one &&
+      data[i].question_two == logged_in_user_answers.question_two&&
+      data[i].question_three == logged_in_user_answers.question_three&&
+      data[i].question_four == logged_in_user_answers.question_four&&
+      data[i].username != logged_in_user.username){
+      matches.push(data[i].username);
+    }
+  }
+  console.log(matches);
+  document.getElementById("SecondOverallMatch").innerHTML = matches; //make sure that the element ID is different to the button ID otherwise the result will turn up as the button
+}
+
+
+
+//when clicking button to find a match based off age call the matching age function
+$("#SecondMatch").click(function () {
+  var settings = {
+    async: true,
+    crossDomain: true,
+    url: url2,
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      "x-apikey": apikey,
+      "cache-control": "no-cache",
+    },
+  };
+
+  $.ajax(settings).done(function (response) {
+    console.log("trying to do big match");
+    console.log(response);
+    SecondMatch(response);
+  });
+});
+
+//third overall match that matches uses with three of the same survey results 
+function ThirdMatch(data) {
+  logged_in_user = global_user_logged_in;
+  logged_in_user_answers = null;
+
+  // Get the current logged in users answers
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].username == logged_in_user.username) {
+      logged_in_user_answers = data[i];
+    }
+  }
+
+  var matches = [];
+  for (var i = 0; i < data.length; i++) {
+    //check if any users have the same surevy results and display the username that is matched
+    console.log(data[i])
+    console.log(logged_in_user_answers)
+    if (
+      data[i].question_one == logged_in_user_answers.question_one &&
+      data[i].question_two == logged_in_user_answers.question_two&&
+      data[i].question_three == logged_in_user_answers.question_three&&
+      data[i].username != logged_in_user.username){
+      matches.push(data[i].username);
+    }
+  }
+  console.log(matches);
+  document.getElementById("ThirdOverallMatch").innerHTML = matches; //make sure that the element ID is different to the button ID otherwise the result will turn up as the button
+}
+
+
+
+//when clicking button to find a match based off age third match making function
+$("#ThirdMatch").click(function () {
+  var settings = {
+    async: true,
+    crossDomain: true,
+    url: url2,
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      "x-apikey": apikey,
+      "cache-control": "no-cache",
+    },
+  };
+
+  $.ajax(settings).done(function (response) {
+    console.log("trying to do big match");
+    console.log(response);
+    ThirdMatch(response);
+  });
+});
+
+//fourth overall match that matches uses with 2 of the same survey results 
+function FourthMatch(data) {
+  logged_in_user = global_user_logged_in;
+  logged_in_user_answers = null;
+
+  // Get the current logged in users answers
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].username == logged_in_user.username) {
+      logged_in_user_answers = data[i];
+    }
+  }
+
+  var matches = [];
+  for (var i = 0; i < data.length; i++) {
+    //check if any users have the same surevy results and display the username that is matched
+    console.log(data[i])
+    console.log(logged_in_user_answers)
+    if (
+      data[i].question_one == logged_in_user_answers.question_one &&
+      data[i].question_two == logged_in_user_answers.question_two&&
+      data[i].username != logged_in_user.username){
+      matches.push(data[i].username);
+    }
+  }
+  console.log(matches);
+  document.getElementById("FourthOverallMatch").innerHTML = matches; //make sure that the element ID is different to the button ID otherwise the result will turn up as the button
+}
+
+
+
+//when clicking button to find a match based off the function that calls for 2 of the same answers 
+$("#FourthMatch").click(function () {
+  var settings = {
+    async: true,
+    crossDomain: true,
+    url: url2,
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      "x-apikey": apikey,
+      "cache-control": "no-cache",
+    },
+  };
+
+  $.ajax(settings).done(function (response) {
+    console.log("trying to do big match");
+    console.log(response);
+    FourthMatch(response);
+  });
+});
+
+//match users that have the same question 1 result - favourite season questions 
+function Q1Match(data) {
   logged_in_user = global_user_logged_in;
   logged_in_user_answers = null;
 
@@ -594,13 +897,13 @@ function OverallMatch(data) {
     }
   }
   console.log(matches);
-  document.getElementById("BigMatch").innerHTML = matches;
+  document.getElementById("QuestionOneMatchResult").innerHTML = matches; //make sure that the element ID is different to the button ID otherwise the result will turn up as the button
 }
 
 
 
-//when clicking button to find a match based off age call the matching age function
-$("#findOverallMatch").click(function () {
+//when clicking button to find a match based off the function that calls for 2 of the same answers 
+$("#QuestionOneMatch").click(function () {
   var settings = {
     async: true,
     crossDomain: true,
@@ -616,9 +919,370 @@ $("#findOverallMatch").click(function () {
   $.ajax(settings).done(function (response) {
     console.log("trying to do big match");
     console.log(response);
-    OverallMatch(response);
+    Q1Match(response);
   });
 });
+
+//match users with the same questions 2 result - how they like to spend their free time 
+function Q2Match(data) {
+  logged_in_user = global_user_logged_in;
+  logged_in_user_answers = null;
+
+  // Get the current logged in users answers
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].username == logged_in_user.username) {
+      logged_in_user_answers = data[i];
+    }
+  }
+
+  var matches = [];
+  for (var i = 0; i < data.length; i++) {
+    //check if any users have the same surevy results and display the username that is matched
+    console.log(data[i])
+    console.log(logged_in_user_answers)
+    if (
+      data[i].question_two == logged_in_user_answers.question_two &&
+      data[i].username != logged_in_user.username){
+      matches.push(data[i].username) ;
+    }
+  }
+  console.log(matches);
+  document.getElementById("QuestionTwoMatchResult").innerHTML = matches; //make sure that the element ID is different to the button ID otherwise the result will turn up as the button
+}
+
+
+
+//when clicking button to find a match based off the function that calls for 2 of the same answers 
+$("#QuestionTwoMatch").click(function () {
+  var settings = {
+    async: true,
+    crossDomain: true,
+    url: url2,
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      "x-apikey": apikey,
+      "cache-control": "no-cache",
+    },
+  };
+
+  $.ajax(settings).done(function (response) {
+    console.log("trying to do big match");
+    console.log(response);
+    Q2Match(response);
+  });
+});
+
+//match based off the result from survey question 3 - what their favourite time of day is 
+function Q3Match(data) {
+  logged_in_user = global_user_logged_in;
+  logged_in_user_answers = null;
+
+  // Get the current logged in users answers
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].username == logged_in_user.username) {
+      logged_in_user_answers = data[i];
+    }
+  }
+
+  var matches = [];
+  for (var i = 0; i < data.length; i++) {
+    //check if any users have the same surevy results and display the username that is matched
+    console.log(data[i])
+    console.log(logged_in_user_answers)
+    if (
+      data[i].question_three == logged_in_user_answers.question_three &&
+      data[i].username != logged_in_user.username){
+      matches.push(data[i].username);
+    }
+  }
+  console.log(matches);
+  document.getElementById("QuestionThreeMatchResult").innerHTML = matches; //make sure that the element ID is different to the button ID otherwise the result will turn up as the button
+}
+
+
+
+//when clicking button to find a match based off the function that calls for 2 of the same answers 
+$("#QuestionThreeMatch").click(function () {
+  var settings = {
+    async: true,
+    crossDomain: true,
+    url: url2,
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      "x-apikey": apikey,
+      "cache-control": "no-cache",
+    },
+  };
+
+  $.ajax(settings).done(function (response) {
+    console.log("question 3 match");
+    console.log(response);
+    Q3Match(response);
+  });
+});
+
+//match based off the result from survey question 4 - what kind of entertainment they like 
+
+function Q4Match(data) {
+  logged_in_user = global_user_logged_in;
+  logged_in_user_answers = null;
+
+  // Get the current logged in users answers
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].username == logged_in_user.username) {
+      logged_in_user_answers = data[i];
+    }
+  }
+
+  var matches = [];
+  for (var i = 0; i < data.length; i++) {
+    //check if any users have the same surevy results and display the username that is matched
+    console.log(data[i])
+    console.log(logged_in_user_answers)
+    if (
+      data[i].question_four == logged_in_user_answers.question_four &&
+      data[i].username != logged_in_user.username){
+      matches.push(data[i].username);
+    }
+  }
+  console.log(matches);
+  document.getElementById("QuestionFourMatchResult").innerHTML = matches; //make sure that the element ID is different to the button ID otherwise the result will turn up as the button
+}
+
+
+
+//when clicking button to find a match based off the function that calls for 2 of the same answers 
+$("#QuestionFourMatch").click(function () {
+  var settings = {
+    async: true,
+    crossDomain: true,
+    url: url2,
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      "x-apikey": apikey,
+      "cache-control": "no-cache",
+    },
+  };
+
+  $.ajax(settings).done(function (response) {
+    console.log("question 4 match");
+    console.log(response);
+    Q4Match(response);
+  });
+});
+
+//match based off the result from survey question 5 - what their dream holiday is 
+
+function Q5Match(data) {
+  logged_in_user = global_user_logged_in;
+  logged_in_user_answers = null;
+
+  // Get the current logged in users answers
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].username == logged_in_user.username) {
+      logged_in_user_answers = data[i];
+    }
+  }
+
+  var matches = [];
+  for (var i = 0; i < data.length; i++) {
+    //check if any users have the same surevy results and display the username that is matched
+    console.log(data[i])
+    console.log(logged_in_user_answers)
+    if (
+      data[i].question_five == logged_in_user_answers.question_five &&
+      data[i].username != logged_in_user.username){
+      matches.push(data[i].username);
+    }
+  }
+  console.log(matches);
+  document.getElementById("QuestionFiveMatchResult").innerHTML = matches; //make sure that the element ID is different to the button ID otherwise the result will turn up as the button
+}
+
+
+
+//when clicking button to find a match based off the function that calls for 2 of the same answers 
+$("#QuestionFiveMatch").click(function () {
+  var settings = {
+    async: true,
+    crossDomain: true,
+    url: url2,
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      "x-apikey": apikey,
+      "cache-control": "no-cache",
+    },
+  };
+
+  $.ajax(settings).done(function (response) {
+    console.log("trying to do big match");
+    console.log(response);
+    Q5Match(response);
+  });
+});
+
+//open the login page
+$('#ShowLogin').click(function(){
+  $("#logoSmall").show();
+
+  $("#sign-up-form").hide();
+  $("#login-form").show();
+  $("#logo").hide();
+  $("#ShowLogin").hide();
+  $("#ShowSignUp").hide();
+})
+
+//open the signUp page
+$('#ShowSignUp').click(function(){
+
+  $("#logoSmall").show();
+  $("#sign-up-form").show();
+  $("#login-form").hide();
+  $("#logo").hide();
+  $("#ShowLogin").hide();
+  $("#ShowSignUp").hide();
+
+})
+
+
+//showing sign in page when first go to the website 
+$('#btnFlipLogin').click(function(){
+  $("#sign-up-form").hide();
+  $("#login-form").show();
+})
+
+//showing sign in page when first go to the website 
+$('#btnFlipSignup').click(function(){
+  $("#sign-up-form").show();
+  $("#login-form").hide();
+})
+
+
+
+//when just signed up show a thankyou message and show a button that takes back to home
+$('#btnSubmit').click(function(){
+  $("#sign-up-form").hide();
+  $("#SignUpComplete").show();
+  $("#start-up").hide();
+})
+
+//click return to home and takes back to the original home page 
+$('#btnReturnToLogin').click(function(){
+  $("#login-form").show();
+  $("#SignUpComplete").hide();
+  $("#start-up").show();
+})
+
+//logging out 
+$('#Logout').click(function(){
+  $("#home-page").hide();
+  $("#login-form").show();
+  $("#start-up").show();
+})
+
+//switch to page 2 - survey page
+$('#Page2').click(function(){
+  $("#surveyPage").show();
+  $("#homeNavigation").show();
+  $("#home-page").hide();
+  $("#matchesPage").hide();
+  $("#profilePage").hide();
+  $("#ProfileMatchesPage").hide();
+  $("#SurveyMatchesPage").hide();
+
+ 
+})
+
+//switch to page 3 - matches page
+$('#Page3').click(function(){
+  $("#surveyPage").hide();
+  $("#homeNavigation").show();
+  $("#home-page").hide();
+  $("#matchesPage").show();
+  $("#profilePage").hide();
+  $("#ProfileMatchesPage").hide();
+  $("#SurveyMatchesPage").hide();
+  $("#BigMatchesPage").hide();
+  $("#SurveyMatch").show();
+  $("#ProfileMatch").show(); 
+  $("#BackMatches").hide();
+
+
+
+})
+
+
+//switch to page 4 - your profile page 
+$('#Page4').click(function(){
+  $("#surveyPage").hide();
+  $("#homeNavigation").show();
+  $("#home-page").hide();
+  $("#matchesPage").hide();
+  $("#profilePage").show();
+})
+
+//switch back to page 1 - home page 
+$('#Page1').click(function(){
+  $("#surveyPage").hide();
+  $("#homeNavigation").show();
+  $("#home-page").show();
+  $("#matchesPage").hide();
+  $("#profilePage").hide();
+})
+
+//when clicking the survey matches page show all the buttons for a survey match 
+$('#SurveyMatch').click(function(){
+  $("#ProfileMatchesPage").hide();
+  $("#SurveyMatchesPage").show();
+  $("#BigMatchesPage").hide();
+  $("#SurveyMatch").hide();
+  $("#ProfileMatch").hide();
+  $("#BigMatch").hide();
+//  $("#matchesPage").hide();
+  $("#BackMatches").show();
+
+})
+
+//when clicking the profile matches page show all the buttons for a profile match 
+$('#ProfileMatch').click(function(){
+  $("#ProfileMatchesPage").show();
+  $("#SurveyMatchesPage").hide();
+  $("#BigMatchesPage").hide();
+  $("#SurveyMatch").hide();
+  $("#ProfileMatch").hide();
+  $("#BigMatch").hide();
+ // $("#matchesPage").hide();
+  $("#BackMatches").show();
+})
+
+//when clicking the big matches page show all the big matches buttons 
+$('#BigMatch').click(function(){
+  $("#ProfileMatchesPage").hide();
+  $("#SurveyMatchesPage").hide();
+  $("#BigMatchesPage").show();
+  $("#SurveyMatch").hide();
+  $("#ProfileMatch").hide();
+  $("#BigMatch").hide();
+ // $("#matchesPage").hide();
+  $("#BackMatches").show();
+})
+
+//when clicking back matches take it back to original matches page
+$('#BackMatches').click(function(){
+  $("#ProfileMatchesPage").hide();
+  $("#SurveyMatchesPage").hide();
+  $("#BigMatchesPage").hide();
+  $("#SurveyMatch").show();
+  $("#ProfileMatch").show();
+  $("#BigMatch").show();
+ // $("#matchesPage").show();
+  $("#BackMatches").hide();
+}) 
+
 
 
 

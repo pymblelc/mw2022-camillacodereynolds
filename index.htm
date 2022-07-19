@@ -16,11 +16,13 @@
   </head>
 
 
+
 <!--sign up html-->
 <body>
   <div class="sign-up" id="sign-up-form" >
-      <label for="username"> Username: </label>
-      <input id="Username" name="username" type="text" />
+     
+      <!--<label for="username"> Username: </label>
+      <input id="Username" name="username" type="text" />  
       <label for="firstName"> First Name: </label>
       <input id="FirstName" name="firstname" type="text" />
       <label for="lastName"> Last Name: </label>
@@ -33,143 +35,248 @@
       <input id="BirthMonth" name="birthMonth" type="text" />
       <label for="password"> Password: </label>
       <input id="Password" name="Password" type="text" />
+    -->
 
+      <input id="Username" placeholder="Username"><br>
+      <input id="FirstName" placeholder="First Name"><br>
+      <input id="LastName" placeholder="Last Name"><br>
+      <input id="Gender" placeholder="Gender (M/F)"><br>
+      <input id="Age" placeholder="Age"><br>
+      <input id="BirthMonth" placeholder="Birth Month"><br>
+      <input id="Password" placeholder="Password"><br>
 
-    <div><button id="btnSubmit">Submit</button></div>
+ 
+
+    <div><button id="btnSubmit">Submit</button>
+    <button id="btnFlipLogin">Already have an account</button></div>
+
   </div>
 
 <!--login in html-->
-<div class="Login" id="login-form">
-  <label for="username"> Username: </label>
-  <input id="Username_l" name="username" type="text" />
-  <label for="password"> Password: </label>
-  <input id="Password_l" name="Password" type="text" />
+<div class="Login" id="login-form" >
 
-  <div><button id="btnLoginForm">Login</button></div>
+<div> <input id="Username_l" placeholder="Username"> </div>
+<div> <input id="Password_l" placeholder="Password"> </div>
+
+
+
+
+  <div><button id="btnLoginForm">Login</button>
+    <button id="btnFlipSignup">Make an account</button></div>
+
 </div>
 
+<!--thankyou and back to home  -->
+<div class = "SignUpComplete" id="SignUpComplete">
+  <h3>Thankyou for signing up</h1>
+  <h4>Please return to login</h2>
+  <div><button id="btnReturnToLogin">Return to login</button></div>
+
+
+</div>
 
 <!--very very start up page -->
 <div class = "start_up" id="start-up">
-  <h1>Welcome to friendable</h1>
-  <h2>Finding Friends For You</h2>
-
+ <!--  <h1>Welcome to friendable</h1> 
+  <h2>Finding Friends For You</h2> -->
+  <img id = "logo" src="logo.png" >
+  <img id = "logoSmall" src="logo.png" >
+  <!-- <div id="topBanner"> -->
+    <div><button id="ShowLogin">Login</button>
+      <div><button id="ShowSignUp">Sign Up</button>
 </div>
   
-  <!-- buttons that lead to the sign up and login inputs showing 
-    <div><button id="CreateAccount">Sign Up</button></div>
-  <div><button id="OpenLogin">Login</button></div> -->
-
-  <!-- images for the original page that shows 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <div>
-    <div class="container">
-      <img src="https://compote.slate.com/images/697b023b-64a5-49a0-8059-27b963453fb1.gif" alt="Avatar" class="image">
-      <div class="overlay">
-        <div class="text">Hello World</div>
-      </div>
-    </div>
-
-
-</div> -->
 
 
 
 
 
 <!--home page Html-->
+
+
+<div class = "homeNavigation" id = "homeNavigation">
+  <!-- <div id="HomeBanner"> </div> -->
+  <img id = "homeLogo" src="logo.png" >
+  <div><button id="Page1">Home</button>
+    <button id="Page2">Survey</button>
+    <button id = "Page3">Matches</button>
+    <button id="Page4">Your Profile</button> </div>
+    <h8 id="welcome_banner"> </h8>
+
+    
+
+
+   </div>
+
     <div class = "home_page" id = "home-page">
-        <h3 id="welcome_banner"> Welcome </h3>
-        <div><button id="findMatchbtnAge">Find Age Match</button></div>
-        <p id = "matches"></p>
-        <div><button id="findMatchbtnGender">Find Same gender</button></div>
-        <p id = "Gendermatches"></p>
-        <div><button id="findMatchbtnOppositeGender">Find Opposite gender</button></div>
-        <p id = "OppositeGendermatches"></p>
-        <div><button id="findOverallMatch">BIG MATCH</button></div>
-        <p id = "BigMatch"></p>
+        <!-- <h8 id="welcome_banner"> Welcome </h8> -->
+
+       
 
 
+        <div class="row">
+          <div class="column">
+            <div class="content">
+              <img src="home1.png" alt="home1" style="width:100%; top: -62px;position: relative;">
+             
+            </div>
+          </div>
+          <div class="column">
+            <div class="content">
+              <img src="home2.png" alt="home2" style="width:100%; top: -62px;position: relative">
+           
+            </div>
+          </div>
+          <div class="column">
+            <div class="content">
+              <img src="home3.png" alt="home3" style="width:100%; top: -62px;position: relative">
+             
+            </div>
+          </div>
+          <div class="column">
+            <div class="content">
+              <img src="home4.png" alt="home4" style="width:100%; top: -62px;position: relative">
+     
+            </div>
+          </div>
+        </div>
+          <!-- <div><button id="Logout">Logout</button></div> -->
 
-      <div class = "original_page" id = "original-page">
+        </div>
 
-      </div>
 
-        <div class="survey">
+<div class = "matchesPage" id="matchesPage">
+
+  <div><button id="ProfileMatch">Profile Match</button></div>
+ <div><button id="SurveyMatch">Survey Match</button></div> 
+ <div><button id="BigMatch">Big Match</button></div> 
+  <div><button id="BackMatches">Back</button></div>
+
+</div>
+
+<div class = "ProfileMatchesPage" id = "ProfileMatchesPage">
+
+  <div><button id="findMatchbtnAge">Find Age Match</button></div>
+  <p id = "matches"></p>
+  <div><button id="findMatchbtnGender">Find Same gender</button></div>
+  <p id = "Gendermatches"></p>
+  <div><button id="findMatchbtnOppositeGender">Find Opposite gender</button></div>
+  <p id = "OppositeGendermatches"></p>
+  <div><button id="findMatchbtnBirthMonth">Same birth month</button></div>
+  <p id = "BirthMonthmatches"></p>
+
+</div>
+
+<div class = "BigMatchesPage" id = "BigMatchesPage">
+
+  <div><button id="FirstMatch">FIRST MATCH</button></div>
+  <p id = "FirstOverallMatch"></p>
+
+  <div><button id="SecondMatch">SECOND MATCH</button></div>
+  <p id = "SecondOverallMatch"></p>
+
+  <div><button id="ThirdMatch"> THIRD MATCH</button></div>
+  <p id = "ThirdOverallMatch"></p>
+
+  <div><button id="FourthMatch">FOURTH MATCH</button></div>
+  <p id = "FourthOverallMatch"></p>
+</div>
+
+<div class = "SurveyMatchesPage" id = "SurveyMatchesPage">
+
+  <div><button id="QuestionOneMatch">Seasons match</button></div>
+  <p id = "QuestionOneMatchResult"></p>
+
+  <div><button id="QuestionTwoMatch">Free time match</button></div>
+  <p id = "QuestionTwoMatchResult"></p>
+
+  <div><button id="QuestionThreeMatch">Favourite time of day match</button></div>
+  <p id = "QuestionThreeMatchResult"></p>
+
+  <div><button id="QuestionFourMatch">entertainment match</button></div>
+  <p id = "QuestionFourMatchResult"></p>
+
+  <div><button id="QuestionFiveMatch">dream holiday match</button></div>
+  <p id = "QuestionFiveMatchResult"></p>
+
+</div> 
+ 
+</div>
+
+
+        <div class="surveyPage" id ="surveyPage">
           <div class="q1">
               <h3>What is your favourtie season</h3>
               <ul class="option1">
-              <li><button id = "Summer">Summer</button></li>
-              <li><button id = "Winter">Winter</button></li>
-              <li><button id = "Autumn"> Autumn</Button></li>
-              <li><button id = "Spring">Spring</button></li>
+              <button id = "Summer">Summer</button>
+              <button id = "Winter">Winter</button>
+              <button id = "Autumn"> Autumn</Button>
+              <button id = "Spring">Spring</button>
               </ul>
           </div>
           <div class="q2">
               <h3>How do you like to spend your free time</h3>
               <ul class="option2">
-              <li><button id = "FamFriends">With Family & Friends</button></li>
-              <li><button id = "Working">Working/Studying</button></li>
-              <li><button id = "Relaxing">Relaxing</button></li>
-              <li><Button id = "Adventurous">Being Adventurous</Button></li>
+              <button id = "FamFriends">With Family & Friends</button>
+              <button id = "Working">Working/Studying</button>
+              <button id = "Relaxing">Relaxing</button>
+              <Button id = "Adventurous">Being Adventurous</Button>
               </ul>
           </div> 
           <div class="q3">
               <h3>What is your favourite time of day?</h3>
               <ul class="option3">
-              <li><button id ="Sunrise">Sunrise</button></li>
-              <li><button id ="Sunset">Sunset</button></li>
-              <li><button id="Night">Night time</button></li>
-              <li><button id ="Day">Day</button></li>
+              <button id ="Sunrise">Sunrise</button>
+              <button id ="Sunset">Sunset</button>
+              <button id="Night">Night time</button>
+              <button id ="Day">Day</button>
               </ul>
           </div>
 
           <div class="q4">
             <h3>What kind of entertainment do you enjoy?</h3>
             <ul class="option4">
-            <li><button id = "Shows">TV Shows/Movies</button></li>
-            <li><button id = "Theatre">Theatre Productions</button></li>
-            <li><button id = "Reading">Reading</button></li>
-            <li><button id = "Music">Music</button></li>
+            <button id = "Shows">TV Shows/Movies</button>
+            <button id = "Theatre">Theatre Productions</button>
+            <button id = "Reading">Reading</button>
+            <button id = "Music">Music</button>
             </ul>
         </div>
 
         <div class="q5">
           <h3>What is your dream holiday?</h3>
           <ul class="option5">
-          <li><button id = "Visiting">Visiting family and friends</button></li>
-          <li><button id = "Sites">An adventure/Site seeing</button></li>
-          <li><button id = "Tropical">Tropical destination</button></li>
-          <li><button id = "Ski">Ski fields</button></li>
+          <button id = "Visiting">Visiting family and friends</button>
+          <button id = "Sites">An adventure/Site seeing</button>
+          <button id = "Tropical">Tropical destination</button>
+          <button id = "Ski">Ski fields</button>
           </ul>
       </div>
 
-      </div>
+ 
       <div class="end">
           <h4>Thank You</h4>
           <button id="submit">Submit</button>
   
       </div>
 
+        </div>
 
- 
+      <div class = "profilePage" id="profilePage">
+        <div> <h10 id = "YourProfile" > Your Profile </h10></div>
+        <div> <h11 id="welcome_name"> </h11> </div>
+        <div> <h11 id="welcome_lastname"> </h11> </div>
+       <div><h11 id="welcome_gender"> </h11>  </div> 
+        <div> <h11 id="welcome_age"> </h11> </div>
+        <div> <h11 id="welcome_birthmonth"> </h11> </div>
+    
+      </div>
 
 
     
     <script type="text/javascript" src="js/majorProject.js"></script> 
     <script type="text/css" src="js/majorProject.css"></script> 
   </body>
-
-
-
-  
-
-
-
-
-
-
-
 
 
 
