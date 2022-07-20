@@ -43,7 +43,7 @@
       <input id="Gender" placeholder="Gender (M/F)"><br>
       <input id="Age" placeholder="Age"><br>
       <input id="BirthMonth" placeholder="Birth Month"><br>
-      <input id="Password" placeholder="Password"><br>
+      <input type ="password" id="Password" placeholder="Password"><br>
 
  
 
@@ -56,7 +56,7 @@
 <div class="Login" id="login-form" >
 
 <div> <input id="Username_l" placeholder="Username"> </div>
-<div> <input id="Password_l" placeholder="Password"> </div>
+<div> <input type = "password" id="Password_l" placeholder="Password"> </div>
 
 
 
@@ -142,61 +142,63 @@
         </div>
           <!-- <div><button id="Logout">Logout</button></div> -->
 
+          <div><button id = "info" > Go to 'Your Profile' to find out in detail how Friendable works and successfully pairs you with some new best friends!</button></div>
+
         </div>
 
 
 <div class = "matchesPage" id="matchesPage">
 
-  <div><button id="ProfileMatch">Profile Match</button></div>
- <div><button id="SurveyMatch">Survey Match</button></div> 
- <div><button id="BigMatch">Big Match</button></div> 
+  <div><button id="ProfileMatch">Profile Match </button></div>
+ <div><button id="SurveyMatch">Survey Match </button></div> 
+ <div><button id="BigMatch">Overall Match</button></div> 
   <div><button id="BackMatches">Back</button></div>
 
 </div>
 
 <div class = "ProfileMatchesPage" id = "ProfileMatchesPage">
 
-  <div><button id="findMatchbtnAge">Find Age Match</button></div>
+  <div><button id="findMatchbtnAge">Find friends with the same age</button></div>
   <p id = "matches"></p>
-  <div><button id="findMatchbtnGender">Find Same gender</button></div>
+  <div><button id="findMatchbtnGender">Find friends of the same gender</button></div>
   <p id = "Gendermatches"></p>
-  <div><button id="findMatchbtnOppositeGender">Find Opposite gender</button></div>
+  <div><button id="findMatchbtnOppositeGender">Find friends of the opposite gender</button></div>
   <p id = "OppositeGendermatches"></p>
-  <div><button id="findMatchbtnBirthMonth">Same birth month</button></div>
+  <div><button id="findMatchbtnBirthMonth">Find friends you share a birth month with</button></div>
   <p id = "BirthMonthmatches"></p>
 
 </div>
 
 <div class = "BigMatchesPage" id = "BigMatchesPage">
 
-  <div><button id="FirstMatch">FIRST MATCH</button></div>
+  <div><button id="FirstMatch">Your Most Compatible Friends</button></div>
   <p id = "FirstOverallMatch"></p>
 
-  <div><button id="SecondMatch">SECOND MATCH</button></div>
+  <div><button id="SecondMatch">Your Second Most Compatible Friends </button></div>
   <p id = "SecondOverallMatch"></p>
 
-  <div><button id="ThirdMatch"> THIRD MATCH</button></div>
+  <div><button id="ThirdMatch"> Your Third Most Compatible Friends</button></div>
   <p id = "ThirdOverallMatch"></p>
 
-  <div><button id="FourthMatch">FOURTH MATCH</button></div>
+  <div><button id="FourthMatch">Your Fourth Most Compatible Friends</button></div>
   <p id = "FourthOverallMatch"></p>
 </div>
 
 <div class = "SurveyMatchesPage" id = "SurveyMatchesPage">
 
-  <div><button id="QuestionOneMatch">Seasons match</button></div>
+  <div><button id="QuestionOneMatch">Favourite Season Match</button></div>
   <p id = "QuestionOneMatchResult"></p>
 
-  <div><button id="QuestionTwoMatch">Free time match</button></div>
+  <div><button id="QuestionTwoMatch">How you like to spend your free time match</button></div>
   <p id = "QuestionTwoMatchResult"></p>
 
   <div><button id="QuestionThreeMatch">Favourite time of day match</button></div>
   <p id = "QuestionThreeMatchResult"></p>
 
-  <div><button id="QuestionFourMatch">entertainment match</button></div>
+  <div><button id="QuestionFourMatch">Favourite entertainment match</button></div>
   <p id = "QuestionFourMatchResult"></p>
 
-  <div><button id="QuestionFiveMatch">dream holiday match</button></div>
+  <div><button id="QuestionFiveMatch">Dream holiday match</button></div>
   <p id = "QuestionFiveMatchResult"></p>
 
 </div> 
@@ -269,7 +271,16 @@
        <div><h11 id="welcome_gender"> </h11>  </div> 
         <div> <h11 id="welcome_age"> </h11> </div>
         <div> <h11 id="welcome_birthmonth"> </h11> </div>
-    
+        <div><button id="Logout">Logout</button></div> 
+        <div><button id="Help">How to use</button></div> 
+
+      </div>
+
+      <div class = "logout" id="logout">
+        <h12> Are you sure you want to logout?</h12>
+        <div> <button id = "yes"> Yes </button></div>
+        <div> <button id = "no"> No </button></div>
+
       </div>
 
 

@@ -153,9 +153,9 @@ function user_home_page_function(user_logged_in, database) {
   }
 
   //check why this doesnt work
-  var Start_up_elements = document.getElementsByClassName("Start_up");
-  for (var i = 0; i < Start_up_elements.length; i++) {
-    Start_up_elements[i].style.display = "block";
+  var start_up_elements = document.getElementsByClassName("start_up");
+  for (var i = 0; i < start_up_elements.length; i++) {
+    start_up_elements[i].style.display = "block";
   }
 
 //hiding the headings 
@@ -257,6 +257,8 @@ $("#btnSubmit").click(function () {
 $("#btnLoginForm").click(function () {
   $("#logoSmall").hide();
   $("#homeLogo").show();
+
+  
   console.log("you are logging in");
   var user = $("#Username_l").val();
   var pass = $("#Password_l").val();
@@ -711,7 +713,7 @@ $("#FirstMatch").click(function () {
   };
 
   $.ajax(settings).done(function (response) {
-    console.log("trying to do big match");
+    console.log("First Match");
     console.log(response);
     FirstMatch(response);
   });
@@ -764,7 +766,7 @@ $("#SecondMatch").click(function () {
   };
 
   $.ajax(settings).done(function (response) {
-    console.log("trying to do big match");
+    console.log("Second Match");
     console.log(response);
     SecondMatch(response);
   });
@@ -816,7 +818,7 @@ $("#ThirdMatch").click(function () {
   };
 
   $.ajax(settings).done(function (response) {
-    console.log("trying to do big match");
+    console.log("Third Match");
     console.log(response);
     ThirdMatch(response);
   });
@@ -867,7 +869,7 @@ $("#FourthMatch").click(function () {
   };
 
   $.ajax(settings).done(function (response) {
-    console.log("trying to do big match");
+    console.log("Fourth Match");
     console.log(response);
     FourthMatch(response);
   });
@@ -1177,12 +1179,6 @@ $('#btnReturnToLogin').click(function(){
   $("#start-up").show();
 })
 
-//logging out 
-$('#Logout').click(function(){
-  $("#home-page").hide();
-  $("#login-form").show();
-  $("#start-up").show();
-})
 
 //switch to page 2 - survey page
 $('#Page2').click(function(){
@@ -1282,6 +1278,33 @@ $('#BackMatches').click(function(){
  // $("#matchesPage").show();
   $("#BackMatches").hide();
 }) 
+
+
+//logging out 
+$('#Logout').click(function(){
+  $("#profilePage").hide();
+  $("#logout").show();
+
+})
+
+$('#yes').click(function(){
+  $("#profilePage").hide();
+  $("#logout").hide();
+  $("#homeNavigation").hide();
+  $("#Login").show();
+  $("#logoSmall").show();
+  $("#sign-up-form").hide();
+  $("#login-form").show();
+  $("#logo").hide();
+  $("#ShowLogin").hide();
+  $("#ShowSignUp").hide();
+})
+
+$('#no').click(function(){
+  $("#profilePage").show();
+  $("#logout").hide();
+})
+
 
 
 
