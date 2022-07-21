@@ -20,48 +20,7 @@ function hide_home_Navigation() {
   }
 }
 
-
-
-
-//hides the sign in and sign up page when first entering the website 
-/* - add back in later
-function show_start_up_page(){
-  var start_up_elements = document.getElementsByClassName("start_up");
-  for (var i = 0; i<start_up_elements.length; i++){
-    start_up_elements[i].style.display = "block";
-  }
-  var sign_up_elements = document.getElementsByClassName("sign-up");
-  for (var i = 0; i < sign_up_elements.length; i++) {
-    sign_up_elements[i].style.display = "none";
-  }
-  var login_up_elements = document.getElementsByClassName("Login");
-  for (var i = 0; i < login_up_elements.length; i++) {
-    login_up_elements[i].style.display = "none";
-  }
-}
-*/
-
-//show and hide login and signup
-
-/* remove 
-$("#OpenLogin").click(function(){
-  $('.Login').show()
-  $("#OpenLogin").hide()
-
-})
-
-$("#CreateAccount").click(function(){
-  console.log('clicking button');
-  $('.sign-up').show()
-  $("#CreateAccount").hide()
-
-})*/
-
-
-//calling the very original page 
-//show_start_up_page();
-
-
+//add profiles function
 function addProfiles(item, url, apikey) {
   var settings = {
     async: true,
@@ -83,6 +42,7 @@ function addProfiles(item, url, apikey) {
   });
 }
 
+//adding the username to the answers database 
 function add_second_response(item2, url2, apikey) {
   var settings2 = {
     async: true,
@@ -171,12 +131,10 @@ function user_home_page_function(user_logged_in, database) {
      home_navigation_elements[i].style.display = "block";
    }
 
-  //^^^^^ 
-
 
   //welcome message = when the logged in user in detected show their a welcome message with their first and last name
   welcome_message =
-    "Welcome " + user_logged_in.firstname + user_logged_in.lastname + " !";
+  "Welcome " + user_logged_in.firstname + user_logged_in.lastname + " !";
   console.log(welcome_message);
   document.getElementById("welcome_banner").innerHTML = welcome_message;
   global_user_logged_in = user_logged_in;
@@ -189,36 +147,30 @@ function user_home_page_function(user_logged_in, database) {
   global_user_logged_in = user_logged_in;
 
   welcome_lastname =
-"Last Name" + ": " + user_logged_in.lastname ;
-console.log(welcome_lastname);
-document.getElementById("welcome_lastname").innerHTML = welcome_lastname;
-global_user_logged_in = user_logged_in;
+  "Last Name" + ": " + user_logged_in.lastname ;
+  console.log(welcome_lastname);
+  document.getElementById("welcome_lastname").innerHTML = welcome_lastname;
+  global_user_logged_in = user_logged_in;
 
-welcome_gender =
-"Gender" + ": " + user_logged_in.gender ;
-console.log(welcome_gender);
-document.getElementById("welcome_gender").innerHTML = welcome_gender;
-global_user_logged_in = user_logged_in;
+  welcome_gender =
+  "Gender" + ": " + user_logged_in.gender ;
+  console.log(welcome_gender);
+  document.getElementById("welcome_gender").innerHTML = welcome_gender;
+  global_user_logged_in = user_logged_in;
 
-welcome_age =
-"Age" + ": " + user_logged_in.age ;
-console.log(welcome_age);
-document.getElementById("welcome_age").innerHTML = welcome_age;
-global_user_logged_in = user_logged_in;
+  welcome_age =
+  "Age" + ": " + user_logged_in.age ;
+  console.log(welcome_age);
+  document.getElementById("welcome_age").innerHTML = welcome_age;
+  global_user_logged_in = user_logged_in;
 
-welcome_birthmonth =
-"Birth Month" + ": " + user_logged_in.birthMonth ;
-console.log(welcome_birthmonth);
-document.getElementById("welcome_birthmonth").innerHTML = welcome_birthmonth;
-global_user_logged_in = user_logged_in;
-
-
-
-
+  welcome_birthmonth =
+  "Birth Month" + ": " + user_logged_in.birthMonth ;
+  console.log(welcome_birthmonth);
+  document.getElementById("welcome_birthmonth").innerHTML = welcome_birthmonth;
+  global_user_logged_in = user_logged_in;
 
 }
-
-
 
 //when clicking btnSubmit make all the entered values go to the database to establish a profile
 $("#btnSubmit").click(function () {
@@ -235,7 +187,6 @@ $("#btnSubmit").click(function () {
 
   addProfiles(tempItem, url, apikey);
 
-  
   var tempItem2 = {
     username: $("#Username").val(),
     question_one: "Blank",
@@ -250,7 +201,6 @@ $("#btnSubmit").click(function () {
   console.log("submitted");
 });
 
-//^^^ use this for surevy values??????
 
 //when submitting the login require the username and password values entered and call login function
 $("#btnLoginForm").click(function () {
@@ -348,7 +298,7 @@ function matching_OppositeGender(data) {
   logged_in_user = global_user_logged_in;
   var OppositeGendermatches = [];
   for (var i = 0; i < data.length; i++) {
-    //check any users that are male and display their username
+    //check any users that arent male and display their username
     if (
       data[i].gender !== logged_in_user.gender &&
       data[i].username != logged_in_user.username
@@ -361,7 +311,7 @@ function matching_OppositeGender(data) {
     OppositeGendermatches;
 }
 
-//when clicking button to find a match based off gender call the gender matching function
+//when clicking button to find a match based off opposite gender call the opposite gender matching function
 
 $("#findMatchbtnOppositeGender").click(function () {
   var settings = {
@@ -389,7 +339,7 @@ function matching_birthMonth(data) {
   logged_in_user = global_user_logged_in;
   var BirthMonthmatches = [];
   for (var i = 0; i < data.length; i++) {
-    //check any users that are male and display their username
+    //check any users that have the same birthday month and check properties
     if (
       data[i].birthMonth == logged_in_user.birthMonth &&
       data[i].username != logged_in_user.username
@@ -401,7 +351,7 @@ function matching_birthMonth(data) {
   document.getElementById("BirthMonthmatches").innerHTML = BirthMonthmatches;
 }
 
-//when clicking button to find a match based off gender call the gender matching function
+//when clicking button to find a match based off birth month call the birth month matching function
 
 $("#findMatchbtnBirthMonth").click(function () {
   var settings = {
@@ -482,8 +432,6 @@ function add_survey_response(id_value, q1_response_v, q2_response_v, q3_response
   });
 
 }
-
-
 
 var q1_response = 'nothing';
 var q2_response = 'nothing';
@@ -621,7 +569,7 @@ $("#Ski").click(function () {
   end.style.display = "block";
 });
 
-//Submit button
+//Submit button for the survey
 $("#submit").click(function () {
   q1.style.display = "block";
   end.style.display="none";
@@ -658,7 +606,7 @@ $("#submit").click(function () {
       }
     };
   });
-//Add stuff in here one the submit button is pressed (i.e return to the start of the survey or show a message saying survey complete)
+
 });
 
 
@@ -750,7 +698,7 @@ function SecondMatch(data) {
 
 
 
-//when clicking button to find a match based off age call the matching age function
+//when clicking button for the second match find a match based off a user that has 4 of the same results
 $("#SecondMatch").click(function () {
   var settings = {
     async: true,
@@ -802,7 +750,7 @@ function ThirdMatch(data) {
 
 
 
-//when clicking button to find a match based off age third match making function
+//when clicking button for the third match find a match based off a user has 3 of the same survey results 
 $("#ThirdMatch").click(function () {
   var settings = {
     async: true,
@@ -903,7 +851,7 @@ function Q1Match(data) {
 
 
 
-//when clicking button to find a match based off the function that calls for 2 of the same answers 
+//find the same q1 match 
 $("#QuestionOneMatch").click(function () {
   var settings = {
     async: true,
@@ -953,7 +901,7 @@ function Q2Match(data) {
 
 
 
-//when clicking button to find a match based off the function that calls for 2 of the same answers 
+//find the same q2 match
 $("#QuestionTwoMatch").click(function () {
   var settings = {
     async: true,
@@ -1002,8 +950,7 @@ function Q3Match(data) {
 }
 
 
-
-//when clicking button to find a match based off the function that calls for 2 of the same answers 
+//find the same q3 match
 $("#QuestionThreeMatch").click(function () {
   var settings = {
     async: true,
@@ -1054,7 +1001,7 @@ function Q4Match(data) {
 
 
 
-//when clicking button to find a match based off the function that calls for 2 of the same answers 
+//find the same q4 match
 $("#QuestionFourMatch").click(function () {
   var settings = {
     async: true,
@@ -1105,7 +1052,7 @@ function Q5Match(data) {
 
 
 
-//when clicking button to find a match based off the function that calls for 2 of the same answers 
+//Find the same q5 match
 $("#QuestionFiveMatch").click(function () {
   var settings = {
     async: true,
@@ -1205,9 +1152,6 @@ $('#Page3').click(function(){
   $("#SurveyMatch").show();
   $("#ProfileMatch").show(); 
   $("#BackMatches").hide();
-
-
-
 })
 
 
@@ -1237,7 +1181,6 @@ $('#SurveyMatch').click(function(){
   $("#SurveyMatch").hide();
   $("#ProfileMatch").hide();
   $("#BigMatch").hide();
-//  $("#matchesPage").hide();
   $("#BackMatches").show();
 
 })
@@ -1250,7 +1193,6 @@ $('#ProfileMatch').click(function(){
   $("#SurveyMatch").hide();
   $("#ProfileMatch").hide();
   $("#BigMatch").hide();
- // $("#matchesPage").hide();
   $("#BackMatches").show();
 })
 
@@ -1262,7 +1204,6 @@ $('#BigMatch').click(function(){
   $("#SurveyMatch").hide();
   $("#ProfileMatch").hide();
   $("#BigMatch").hide();
- // $("#matchesPage").hide();
   $("#BackMatches").show();
 })
 
@@ -1274,7 +1215,6 @@ $('#BackMatches').click(function(){
   $("#SurveyMatch").show();
   $("#ProfileMatch").show();
   $("#BigMatch").show();
- // $("#matchesPage").show();
   $("#BackMatches").hide();
 }) 
 

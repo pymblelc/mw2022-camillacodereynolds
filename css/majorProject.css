@@ -4,7 +4,6 @@ body{
 } 
 
 #logo{
-
   position: relative;
   height: 330px;
   width:800px;
@@ -13,7 +12,6 @@ body{
 }
 
 #logoSmall{
-
   position: relative;
   display:none;
   height: 153px;
@@ -32,8 +30,6 @@ body{
 }
 
 
-
-
 h1{
   color:black;
   font-size: 60px;
@@ -42,7 +38,6 @@ h1{
   left: 463px;
   font-family: Georgia, serif;
   text-align: center;
-  border-color: lightblue;
 }
 
 h2{
@@ -57,6 +52,29 @@ h2{
 
 }
 
+h3{
+  color:black;
+  font-size: 30px;
+  position: absolute;
+  top: 193px;
+  left: 540px;
+  font-family: Georgia, serif;
+  text-align: center;
+  border-color: lightblue;
+}
+
+h4{
+  color: black;
+  position: relative;
+  font-size: 30px;
+  position: absolute;
+  top: 201px;
+  left: 642px;
+  font-family: Georgia, serif;
+  text-align: center;
+}
+
+
 h5{
   color: black;
     font-size: 30px;
@@ -65,13 +83,8 @@ h5{
     left: 494px;
     font-family: Georgia, serif;
     text-align: center;
-    border-color: lightblue;
 }
 
-/*body {
-  background-image: url("Friendable.jpg");
-
- }*/
 
 input{
   position: relative;
@@ -96,30 +109,12 @@ label{
   font-size: 15px;
 }
 
-
-
-#topBanner{
-  position: absolute;
-  top: 0px;
-  border: 2pt solid (214, 212, 212);
-  border-bottom: 2pt solid black;
-  /* background-color: #adc8d9; */
-  background-color: #88b9d7;
-  width: 100%;
-  height:100px;
-  opacity: 30%;
-  z-index: 1;
-}
-
-
-
 .sign-up{
   position:absolute;
   top: 200px;
   left: 40%;
   display:none;
   border: 20px;
-
 }
 
 .Login{
@@ -129,9 +124,6 @@ label{
   position:absolute; 
   border:20px;
   border-radius: 20px;
-
-
- 
 }
 
 #ShowLogin{
@@ -153,7 +145,6 @@ label{
   background-color: grey;
   box-shadow: 3px 3px 5px grey;
 }
-
 
 #ShowSignUp{
   position: relative;
@@ -212,8 +203,6 @@ label{
   cursor: pointer;
 }
 
-
-
 #btnFlipLogin{
   padding: 10px;
   background-color: transparent;
@@ -233,8 +222,6 @@ label{
   box-shadow: 3px 3px 5px grey;
 }
 
-
-
 #btnLoginForm{
   padding: 10px;
   border: 1px solid gray;
@@ -247,13 +234,11 @@ label{
   border-radius: 15px;
   width: 150px;
   cursor: pointer;
-
   }
 
   #btnLoginForm:hover {
     background-color: grey;
     box-shadow: 3px 3px 5px grey;
-    
   }
 
   #btnReturnToLogin{
@@ -281,27 +266,7 @@ label{
   width:120px;
   }
 
-
-
-
-
-
 /*Home page css */
-
-#HomeBanner{
-  position:relative;
-  top: 0px;
-  border: 2pt solid (214, 212, 212);
-  border-bottom: 2pt solid black;
-  /* background-color: #adc8d9; */
-  background-color: #88b9d7;
-  width: 100%;
-  height:48px;
-  opacity: 30%;
-  z-index: 1;
-  overflow: hidden;
-}
-
 
 #welcome_banner{
   position: relative;
@@ -322,14 +287,12 @@ label{
   font-family: Georgia, serif;
   top: 8px;
   left:20px;
-  
   } 
 
   #Page1:hover {
     background-color: grey;
     box-shadow: 3px 3px 5px grey;
     cursor: pointer;
-
   }
 
   #Page2{
@@ -348,7 +311,6 @@ label{
       background-color: grey;
       box-shadow: 3px 3px 5px grey;
       cursor: pointer;
-  
     }
 
     #Page3{
@@ -398,7 +360,6 @@ label{
           left: 87px;
           font-size: 20px;
           border: 1px solid lightgray;
-
           }
         
     
@@ -437,8 +398,6 @@ label{
       display:none;
     }
     
-
-
 /*Matches page css*/
 
 #ProfileMatch{
@@ -458,7 +417,6 @@ label{
 #ProfileMatch:hover {
   background-color: grey;
   box-shadow: 3px 3px 5px grey;
-  
 }
 
 #BigMatch{
@@ -478,7 +436,6 @@ label{
 #BigMatch:hover {
   background-color: grey;
   box-shadow: 3px 3px 5px grey;
-  
 }
 
 #SurveyMatch{
@@ -498,7 +455,6 @@ label{
 #SurveyMatch:hover {
   background-color: grey;
   box-shadow: 3px 3px 5px grey;
-  
 }
 
 #BackMatches{
@@ -521,8 +477,6 @@ label{
 }
 
 /*survey css*/
-
- 
 /*Display change properties */
 
 .q1 {
@@ -547,32 +501,6 @@ label{
 
 .end {
   display: none;
-}
-
-
-
-h3{
-  color:black;
-  font-size: 30px;
-  position: absolute;
-  top: 193px;
-  left: 540px;
-  font-family: Georgia, serif;
-  text-align: center;
-  border-color: lightblue;
-}
-
-h4{
-  color: black;
-  position: relative;
-  font-size: 30px;
-  position: absolute;
-  top: 201px;
-  left: 642px;
-  font-family: Georgia, serif;
-  text-align: center;
-
-
 }
 
 #submit{
@@ -924,7 +852,6 @@ h4{
   box-shadow: 3px 3px 5px grey;
 }
 
-
 /*question 5*/
 
 #Visiting {
@@ -1007,7 +934,6 @@ h4{
   box-shadow: 3px 3px 5px lightgrey;
 }
 
-
 /* css for the buttons of the matches pages  */
 
 #findMatchbtnAge {
@@ -1086,7 +1012,7 @@ h4{
   box-shadow: 3px 3px 5px grey;
 }
 
-/* responses attempt */
+/* responses of the matches */
 #matches{
   top: 318px;
     left: 33px;
@@ -1122,11 +1048,7 @@ h4{
     
 }
 
-
-
 /* survey part of the matches page*/
-
-
 
 #QuestionOneMatch{
   padding: 10px;
@@ -1344,9 +1266,7 @@ h4{
   font-size: 30px;
   font-family: Georgia, serif;
   position: absolute;
-
 }
-
 
 #FourthMatch{
   padding: 10px;
@@ -1373,10 +1293,7 @@ h4{
   font-size: 30px;
   font-family: Georgia, serif;
   position: absolute;
-
 }
-
-
 
 /*css for home bannered bit */
 
@@ -1385,13 +1302,6 @@ h4{
   border-radius: 30px;
 }
 
-/*body {
-  background-color: #f1f1f1;
-  padding: 20px;
-  font-family: Arial;
-} */
-
-/* Center website */
 .main {
   max-width: 1000px;
   margin: auto;
@@ -1406,7 +1316,7 @@ h1 {
   margin: 8px -16px;
 }
 
-/* Add padding BETWEEN each column (if you want) */
+/* Add padding BETWEEN each column */
 .row,
 .row > .column {
   padding: 8px;
@@ -1431,20 +1341,6 @@ h1 {
   padding: 10px;
   border-radius: 30px;
 }
-
-/* Responsive layout - makes a two column-layout instead of four columns 
-@media screen and (max-width: 900px) {
-  .column {
-    width: 50%;
-  }
-}
-
- /* Responsive layout - makes the two columns stack on top of each other instead of next to each other 
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-} */
 
 /*profile page css*/
 
