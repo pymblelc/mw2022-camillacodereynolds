@@ -40,20 +40,32 @@ h1{
   position: absolute;
   top: -29px;
   left: 463px;
-  font-family: "Papyrus", fantasy;
+  font-family: Georgia, serif;
   text-align: center;
   border-color: lightblue;
 }
 
 h2{
-  color:black;
-  font-size: 25px;
+  color: black;
+  position: relative;
+  font-size: 22px;
   position: absolute;
-  top: 51px;
-  left: 598px;
-  font-family: "Papyrus", fantasy;
+  top: 252px;
+  left: 597px;
+  font-family: Georgia, serif;
   text-align: center;
-  border-color: lightblue;
+
+}
+
+h5{
+  color: black;
+    font-size: 30px;
+    position: absolute;
+    top: 238px;
+    left: 494px;
+    font-family: Georgia, serif;
+    text-align: center;
+    border-color: lightblue;
 }
 
 /*body {
@@ -543,8 +555,8 @@ h3{
   color:black;
   font-size: 30px;
   position: absolute;
-  top: 209px;
-  left: 475px;
+  top: 193px;
+  left: 540px;
   font-family: Georgia, serif;
   text-align: center;
   border-color: lightblue;
@@ -1000,8 +1012,8 @@ h4{
 
 #findMatchbtnAge {
   padding: 10px;
-  width: 330px;
-  height: 110px;
+  width: 1390px;
+  height: 68px;
   position: absolute;
   border: 1px solid gray;
   background-color: #cec1b9;
@@ -1019,15 +1031,15 @@ h4{
 
 #findMatchbtnGender {
   padding: 10px;
-  width: 330px;
-  height: 110px;
+  width: 1390px;
+  height: 67px;
   position: absolute;
   border: 1px solid gray;
   background-color: #cec1b9;
   border-radius: 20px;
   font-family: Georgia, serif;
-  top: 262px;
-  left: 382px;
+  top: 395px;
+  left: 31px;
   cursor: pointer;
 }
 
@@ -1038,15 +1050,15 @@ h4{
 
 #findMatchbtnOppositeGender {
   padding: 10px;
-  width: 330px;
-  height: 110px;
+  width: 1391px;
+  height: 69px;
   position: absolute;
   border: 1px solid gray;
   background-color: #cec1b9;
   border-radius: 20px;
   font-family: Georgia, serif;
-  top: 261px;
-  left: 739px;
+  top: 532px;
+  left: 31px;
   cursor: pointer;
 }
 
@@ -1057,15 +1069,15 @@ h4{
 
 #findMatchbtnBirthMonth {
   padding: 10px;
-  width: 330px;
-  height: 110px;
+  width: 1389px;
+  height: 68px;
   position: absolute;
   border: 1px solid gray;
   background-color: #cec1b9;
   border-radius: 20px;
   font-family: Georgia, serif;
-  top: 263px;
-  left: 1090px;
+  top: 669px;
+  left: 31px;
   cursor: pointer;
 }
 
@@ -1076,37 +1088,37 @@ h4{
 
 /* responses attempt */
 #matches{
-  top: 350px;
-  left: 33px;
-  font-size: 30px;
-  font-family: Georgia, serif;
-  position: absolute;
+  top: 318px;
+    left: 33px;
+    font-size: 30px;
+    font-family: Georgia, serif;
+    position: absolute;
 
 }
 #Gendermatches{
   font-size: 30px;
   font-family: Georgia, serif;
   position: absolute;
-  top: 353px;
-  left: 389px;
+  top: 454px;
+  left: 29px;
 
 }
 
 #OppositeGendermatches{
   font-size: 30px;
-    font-family: Georgia, serif;
-    position: absolute;
-    top: 353px;
-    left: 741px;
+  font-family: Georgia, serif;
+  position: absolute;
+  top: 586px;
+  left: 29px;
 
 }
 
 #BirthMonthmatches{
   font-size: 30px;
-    font-family: Georgia, serif;
-    position: absolute;
-    top: 353px;
-    left: 1097px;
+  font-family: Georgia, serif;
+  position: absolute;
+  top: 721px;
+  left: 30px;
     
 }
 
@@ -1118,15 +1130,15 @@ h4{
 
 #QuestionOneMatch{
   padding: 10px;
-  width: 270px;
-  height: 110px;
+  width: 1390px;
+  height: 68px;
   position: absolute;
   border: 1px solid gray;
   background-color: #cec1b9;
   border-radius: 20px;
   font-family: Georgia, serif;
   top: 261px;
-  left: 17px;
+  left: 31px;
   cursor: pointer;
 }
 
@@ -1137,15 +1149,15 @@ h4{
 
 #QuestionTwoMatch {
   padding: 10px;
-  width: 270px;
-  height: 110px;
+  width: 1390px;
+  height: 67px;
   position: absolute;
   border: 1px solid gray;
   background-color: #cec1b9;
   border-radius: 20px;
   font-family: Georgia, serif;
-  top: 261px;
-  left: 301px;
+  top: 395px;
+  left: 31px;
   cursor: pointer;
 }
 
@@ -1156,15 +1168,15 @@ h4{
 
 #QuestionThreeMatch {
   padding: 10px;
-  width: 270px;
-  height: 110px;
+  width: 1391px;
+  height: 69px;
   position: absolute;
   border: 1px solid gray;
   background-color: #cec1b9;
   border-radius: 20px;
   font-family: Georgia, serif;
-  top: 261px;
-  left: 587px;
+  top: 532px;
+  left: 31px;
   cursor: pointer;
 }
 
@@ -1175,15 +1187,15 @@ h4{
 
 #QuestionFourMatch {
   padding: 10px;
-  width: 270px;
-  height: 110px;
+  width: 1389px;
+  height: 68px;
   position: absolute;
   border: 1px solid gray;
   background-color: #cec1b9;
   border-radius: 20px;
   font-family: Georgia, serif;
-  top: 261px;
-  left: 873px;
+  top: 669px;
+  left: 31px;
   cursor: pointer;
 }
 
@@ -1194,15 +1206,15 @@ h4{
 
 #QuestionFiveMatch {
   padding: 10px;
-  width: 270px;
-  height: 110px;
+  width: 1389px;
+  height: 68px;
   position: absolute;
   border: 1px solid gray;
   background-color: #cec1b9;
   border-radius: 20px;
   font-family: Georgia, serif;
-  top: 261px;
-  left: 1158px;
+  top: 799px;
+  left: 31px;
   cursor: pointer;
 }
 
@@ -1212,43 +1224,43 @@ h4{
 }
 
 #QuestionOneMatchResult{
-  top: 350px;
-  left: 33px;
-  font-size: 30px;
-  font-family: Georgia, serif;
-  position: absolute;
+  top: 318px;
+    left: 33px;
+    font-size: 30px;
+    font-family: Georgia, serif;
+    position: absolute;
 }
 
 #QuestionTwoMatchResult{
-  top: 350px;
-  left: 300px;
   font-size: 30px;
   font-family: Georgia, serif;
   position: absolute;
+  top: 454px;
+  left: 29px;
 }
 
 #QuestionThreeMatchResult{
-  top: 350px;
-  left: 593px;
   font-size: 30px;
   font-family: Georgia, serif;
   position: absolute;
+  top: 586px;
+  left: 29px;
 }
 
 #QuestionFourMatchResult{
-  top: 350px;
-  left: 877px;
   font-size: 30px;
   font-family: Georgia, serif;
   position: absolute;
+  top: 721px;
+  left: 30px;
 }
 
 #QuestionFiveMatchResult{
-  top: 350px;
-  left: 1161px;
   font-size: 30px;
   font-family: Georgia, serif;
   position: absolute;
+  top: 847px;
+  left: 30px;
 }
 
 /*big match page */
@@ -1488,7 +1500,7 @@ h11{
 #Help{
 
   position: relative;
-    top: 1px;
+    top: 13px;
     left: 729px;
     height: 47px;
     width: 138px;

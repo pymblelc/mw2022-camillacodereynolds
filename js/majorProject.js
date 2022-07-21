@@ -23,7 +23,6 @@ function hide_home_Navigation() {
 
 
 
-
 //hides the sign in and sign up page when first entering the website 
 /* - add back in later
 function show_start_up_page(){
@@ -258,7 +257,7 @@ $("#btnLoginForm").click(function () {
   $("#logoSmall").hide();
   $("#homeLogo").show();
 
-  
+
   console.log("you are logging in");
   var user = $("#Username_l").val();
   var pass = $("#Password_l").val();
