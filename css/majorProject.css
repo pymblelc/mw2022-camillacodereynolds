@@ -1,0 +1,1471 @@
+body{
+  background-image: url("https://img.freepik.com/free-vector/pastel-vector-dull-pastel-abstract-textured-background_53876-110546.jpg?w=2000");
+  background-size: cover;
+} 
+
+#logo{
+  position: relative;
+  height: 330px;
+  width:800px;
+  top: 180px;
+  left: 310px;
+}
+
+#logoSmall{
+  position: relative;
+  display:none;
+  height: 153px;
+  width:479px;
+  top: 137px;
+  left: 488px;
+}
+
+#homeLogo {
+  position: relative;
+  display: none;
+  height: 153px;
+  width: 479px;
+  top: 4px;
+  left: 488px;
+}
+
+
+h1{
+  color:black;
+  font-size: 60px;
+  position: absolute;
+  top: -29px;
+  left: 463px;
+  font-family: Georgia, serif;
+  text-align: center;
+}
+
+h2{
+  color: black;
+  position: relative;
+  font-size: 22px;
+  position: absolute;
+  top: 252px;
+  left: 597px;
+  font-family: Georgia, serif;
+  text-align: center;
+
+}
+
+h3{
+  color:black;
+  font-size: 30px;
+  position: absolute;
+  top: 193px;
+  left: 540px;
+  font-family: Georgia, serif;
+  text-align: center;
+  border-color: lightblue;
+}
+
+h4{
+  color: black;
+  position: relative;
+  font-size: 30px;
+  position: absolute;
+  top: 201px;
+  left: 642px;
+  font-family: Georgia, serif;
+  text-align: center;
+}
+
+
+h5{
+  color: black;
+    font-size: 30px;
+    position: absolute;
+    top: 238px;
+    left: 494px;
+    font-family: Georgia, serif;
+    text-align: center;
+}
+
+
+input{
+  position: relative;
+  padding: 3px;
+  box-shadow: 3px 3px 5px grey;
+  font-size: 17px;
+  font-weight: 200;
+  width: 303px;
+  top: 87px;
+  left: 1px;
+  border-spacing: 20px;
+  margin: 5px;
+  height: 39px;
+  border-radius: 15px;
+}
+
+label{
+  color: navy;
+  font-weight: bold;
+  display: block;
+  padding:4px;
+  font-size: 15px;
+}
+
+.sign-up{
+  position:absolute;
+  top: 200px;
+  left: 40%;
+  display:none;
+  border: 20px;
+}
+
+.Login{
+  display:none;
+  left:40%;
+  top:200px;
+  position:absolute; 
+  border:20px;
+  border-radius: 20px;
+}
+
+#ShowLogin{
+  position: relative;
+  top: 140px;
+  left: 603px;
+  height: 47px;
+  width: 138px;
+  padding: 10px;
+  border: 1px solid gray;
+  background-color:lightblue;
+  border-radius: 5px;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#ShowLogin:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#ShowSignUp{
+  position: relative;
+  top: 93px;
+  left: 753px;
+  height: 47px;
+  width: 138px;
+  padding: 10px;
+  border: 1px solid gray;
+  background-color:lightblue;
+  border-radius: 5px;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#ShowSignUp:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+.SignUpComplete{
+  display:none;
+}
+
+#btnSubmit{
+  padding: 10px;
+  border: 1px solid gray;
+  background-color: lightblue;
+  border-radius: 5px;
+  font-family: Georgia, serif;
+  top: 91px;
+  position: relative;
+  left: 4px;
+  border-radius: 15px;
+  width: 150px;
+  cursor: pointer;
+}
+
+#btnSubmit:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#btnFlipSignup{
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 5px;
+  font-family: Georgia, serif;
+  position: relative;
+  top: 96px;
+  left: 1px;
+  border: transparent;
+  text-decoration-line: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+#btnFlipLogin{
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 5px;
+  font-family: Georgia, serif;
+  position: relative;
+  top: 96px;
+  left: 10px;
+  border: transparent;
+  text-decoration-line: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+#btnFlipLogin:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#btnLoginForm{
+  padding: 10px;
+  border: 1px solid gray;
+  background-color: lightblue;
+  border-radius: 5px;
+  font-family: Georgia, serif;
+  top: 91px;
+  position: relative;
+  left: 4px;
+  border-radius: 15px;
+  width: 150px;
+  cursor: pointer;
+  }
+
+  #btnLoginForm:hover {
+    background-color: grey;
+    box-shadow: 3px 3px 5px grey;
+  }
+
+  #btnReturnToLogin{
+    padding: 10px;
+    border: 1px solid gray;
+    background-color: lightblue;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    top: 305px;
+    position: relative;
+    left: 639px;
+    border-radius: 15px;
+    width: 150px;
+    cursor: pointer;
+  }
+
+  #btnReturnToLogin:hover {
+    background-color: grey;
+    box-shadow: 3px 3px 5px grey;
+    
+  }
+
+#findMatchbtn{
+  height: 50px;
+  width:120px;
+  }
+
+/*Home page css */
+
+#welcome_banner{
+  position: relative;
+  top: -121px;
+  font-size: 30px;
+  left: 1057px;
+  border: 30px;
+  font-family: Georgia, serif;
+}
+
+#Page1{
+  padding: 10px;
+  width: 330px;
+  position: relative;
+  border: 1px solid gray;
+  background-color:lightblue;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  top: 8px;
+  left:20px;
+  } 
+
+  #Page1:hover {
+    background-color: grey;
+    box-shadow: 3px 3px 5px grey;
+    cursor: pointer;
+  }
+
+  #Page2{
+    padding: 10px;
+    width:330px;
+    position: relative;
+    border: 1px solid gray;
+    background-color:lightblue;
+    border-radius: 20px;
+    font-family: Georgia, serif;
+    top: 8px;
+    left:40px;
+    }
+  
+    #Page2:hover {
+      background-color: grey;
+      box-shadow: 3px 3px 5px grey;
+      cursor: pointer;
+    }
+
+    #Page3{
+      padding: 10px;
+      width: 330px;
+      position: relative;
+      border: 1px solid gray;
+      background-color:lightblue;
+      border-radius: 20px;
+      font-family: Georgia, serif;
+      top: 8px;
+      left:60px
+      }
+    
+      #Page3:hover {
+        background-color: grey;
+        box-shadow: 3px 3px 5px grey;
+        cursor: pointer;
+      }
+    
+      #Page4{
+        padding: 10px;
+        width: 330px;
+        position: relative;
+        border: 1px solid gray;
+        background-color:lightblue;
+        border-radius: 20px;
+        font-family:Georgia, serif;
+        top: 8px;
+        left:80px;
+        }
+      
+        #Page4:hover {
+          background-color: grey;
+          box-shadow: 3px 3px 5px grey;
+          cursor: pointer;
+      
+        }
+
+        #info{
+          padding: 10px;
+          width: 1306px;
+          position: relative;
+          background-color: #e7d4c9;
+          font-family: Georgia, serif;
+          top: -64px;
+          left: 87px;
+          font-size: 20px;
+          border: 1px solid lightgray;
+          }
+        
+    
+    .home_page{
+      display: none;
+
+    }
+
+    .homeNavigation{
+      display: none;
+   
+    }
+
+    .matchesPage{
+      display:none;
+    }
+
+    .surveyPage{
+      display:none;
+    }
+
+    .profilePage{
+      display:none;
+    }
+
+    .SurveyMatchesPage{
+      display:none;
+
+    }
+
+    .ProfileMatchesPage{
+      display:none;
+    }
+
+    .BigMatchesPage{
+      display:none;
+    }
+    
+/*Matches page css*/
+
+#ProfileMatch{
+  padding: 10px;
+  width: 683px;
+  height: 302px;
+  position: relative;
+  border: 0px;
+  background-color: #e1d2c3;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  top: 8px;
+  left: 22px;
+  cursor:pointer
+}
+
+#ProfileMatch:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#BigMatch{
+  padding: 10px;
+  width: 1385px;
+  height: 302px;
+  position: relative;
+  border: 0px;
+  background-color: #e1d2c3;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  top: -273px;
+  left: 22px;
+  cursor: pointer;
+}
+
+#BigMatch:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#SurveyMatch{
+  padding: 10px;
+  width: 683px;
+  height: 302px;
+  position: relative;
+  border: 0px;
+  background-color: #e1d2c3;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  top: -294px;
+  left: 727px;
+  cursor: pointer;
+}
+
+#SurveyMatch:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#BackMatches{
+  position: relative;
+   padding: 10px;
+    width: 119px;
+    position: relative;
+    border: 1px solid gray;
+    background-color: #e1d7c4;
+    border-radius: 20px;
+    font-family: Georgia, serif;
+    top: -157px;
+    left: 80px;
+    cursor: pointer;
+}
+
+#BackMatches:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+/*survey css*/
+/*Display change properties */
+
+.q1 {
+  display: block;
+}
+
+.q2{
+  display: none;
+}
+
+.q3{
+  display: none;
+}
+
+.q4{
+    display:none;
+}
+
+.q5{
+    display:none;
+}
+
+.end {
+  display: none;
+}
+
+#submit{
+  padding: 10px;
+  position: relative;
+  border: 1px solid gray;
+  background-color: #ddcdbe;
+  border-radius: 5px;
+  font-family: Georgia, serif;
+  left: 633px;
+  top: 43px;
+  height: 54px;
+  width: 180px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+/*question one*/
+
+#Summer {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 80px;
+  left: 344px;
+  border-radius: 10px;
+  background-color: #e7d4c9;;
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Summer:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+
+#Winter {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 80px;
+  left: 361px;
+  border-radius: 10px;
+  background-color: #e7d4c9;;
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Winter:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#Autumn {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 296px;
+  left: -265px;
+  border-radius: 10px;
+  background-color: #e7d4c9;;
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Autumn:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#Spring {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 296px;
+  left: -248px;
+  border-radius: 10px;
+  background-color: #e7d4c9;;
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Spring:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+/*question 2 */
+
+#FamFriends {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 80px;
+  left: 344px;
+  border-radius: 10px;
+  background-color: #e1d7c3;
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#FamFriends:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#Working {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 80px;
+  left: 361px;
+  border-radius: 10px;
+  background-color: #e1d7c3;
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Working:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#Relaxing {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 296px;
+  left: -265px;
+  border-radius: 10px;
+  background-color: #e1d7c3;
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Relaxing:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#Adventurous {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 296px;
+  left: -248px;
+  border-radius: 10px;
+  background-color: #e1d7c3;
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Adventurous:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+/*question 3*/
+
+#Sunrise {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 80px;
+  left: 344px;
+  border-radius: 10px;
+  background-color: #cdc4bf;
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Sunrise:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#Sunset {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 80px;
+  left: 361px;
+  border-radius: 10px;
+  background-color: #cdc4bf;
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Sunset:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#Night {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 296px;
+  left: -265px;
+  border-radius: 10px;
+  background-color: #cdc4bf;
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Night:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#Day {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 296px;
+  left: -248px;
+  border-radius: 10px;
+  background-color: #cdc4bf;
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Day:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+/*question 4*/
+
+#Shows {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 80px;
+  left: 344px;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Shows:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#Theatre {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 80px;
+  left: 361px;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Theatre:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#Reading {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 296px;
+  left: -265px;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Reading:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#Music {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 296px;
+  left: -248px;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Music:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+/*question 5*/
+
+#Visiting {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 80px;
+  left: 344px;
+  border-radius: 10px;
+  background-color: rgb(217 231 235);
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Visiting:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#Sites {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 80px;
+  left: 361px;
+  border-radius: 10px;
+  background-color: rgb(217 231 235);
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Sites:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#Tropical {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 296px;
+  left: -265px;
+  border-radius: 10px;
+  background-color: rgb(217 231 235);
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Tropical:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#Ski {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 296px;
+  left: -248px;
+  border-radius: 10px;
+  background-color: rgb(217 231 235); 
+  background-repeat:no-repeat;
+  border: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#Ski:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px lightgrey;
+}
+
+/* css for the buttons of the matches pages  */
+
+#findMatchbtnAge {
+  padding: 10px;
+  width: 1390px;
+  height: 68px;
+  position: absolute;
+  border: 1px solid gray;
+  background-color: #cec1b9;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  top: 261px;
+  left: 31px;
+  cursor: pointer;
+}
+
+#findMatchbtnAge:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#findMatchbtnGender {
+  padding: 10px;
+  width: 1390px;
+  height: 67px;
+  position: absolute;
+  border: 1px solid gray;
+  background-color: #cec1b9;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  top: 395px;
+  left: 31px;
+  cursor: pointer;
+}
+
+#findMatchbtnGender:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#findMatchbtnOppositeGender {
+  padding: 10px;
+  width: 1391px;
+  height: 69px;
+  position: absolute;
+  border: 1px solid gray;
+  background-color: #cec1b9;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  top: 532px;
+  left: 31px;
+  cursor: pointer;
+}
+
+#findMatchbtnOppositeGender:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#findMatchbtnBirthMonth {
+  padding: 10px;
+  width: 1389px;
+  height: 68px;
+  position: absolute;
+  border: 1px solid gray;
+  background-color: #cec1b9;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  top: 669px;
+  left: 31px;
+  cursor: pointer;
+}
+
+#findMatchbtnBirthMonth:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+/* responses of the matches */
+#matches{
+  top: 318px;
+    left: 33px;
+    font-size: 30px;
+    font-family: Georgia, serif;
+    position: absolute;
+
+}
+#Gendermatches{
+  font-size: 30px;
+  font-family: Georgia, serif;
+  position: absolute;
+  top: 454px;
+  left: 29px;
+
+}
+
+#OppositeGendermatches{
+  font-size: 30px;
+  font-family: Georgia, serif;
+  position: absolute;
+  top: 586px;
+  left: 29px;
+
+}
+
+#BirthMonthmatches{
+  font-size: 30px;
+  font-family: Georgia, serif;
+  position: absolute;
+  top: 721px;
+  left: 30px;
+    
+}
+
+/* survey part of the matches page*/
+
+#QuestionOneMatch{
+  padding: 10px;
+  width: 1390px;
+  height: 68px;
+  position: absolute;
+  border: 1px solid gray;
+  background-color: #cec1b9;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  top: 261px;
+  left: 31px;
+  cursor: pointer;
+}
+
+#QuestionOneMatch:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#QuestionTwoMatch {
+  padding: 10px;
+  width: 1390px;
+  height: 67px;
+  position: absolute;
+  border: 1px solid gray;
+  background-color: #cec1b9;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  top: 395px;
+  left: 31px;
+  cursor: pointer;
+}
+
+#QuestionTwoMatch:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#QuestionThreeMatch {
+  padding: 10px;
+  width: 1391px;
+  height: 69px;
+  position: absolute;
+  border: 1px solid gray;
+  background-color: #cec1b9;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  top: 532px;
+  left: 31px;
+  cursor: pointer;
+}
+
+#QuestionThreeMatch:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#QuestionFourMatch {
+  padding: 10px;
+  width: 1389px;
+  height: 68px;
+  position: absolute;
+  border: 1px solid gray;
+  background-color: #cec1b9;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  top: 669px;
+  left: 31px;
+  cursor: pointer;
+}
+
+#QuestionFourMatch:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#QuestionFiveMatch {
+  padding: 10px;
+  width: 1389px;
+  height: 68px;
+  position: absolute;
+  border: 1px solid gray;
+  background-color: #cec1b9;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  top: 799px;
+  left: 31px;
+  cursor: pointer;
+}
+
+#QuestionFiveMatch:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#QuestionOneMatchResult{
+  top: 318px;
+    left: 33px;
+    font-size: 30px;
+    font-family: Georgia, serif;
+    position: absolute;
+}
+
+#QuestionTwoMatchResult{
+  font-size: 30px;
+  font-family: Georgia, serif;
+  position: absolute;
+  top: 454px;
+  left: 29px;
+}
+
+#QuestionThreeMatchResult{
+  font-size: 30px;
+  font-family: Georgia, serif;
+  position: absolute;
+  top: 586px;
+  left: 29px;
+}
+
+#QuestionFourMatchResult{
+  font-size: 30px;
+  font-family: Georgia, serif;
+  position: absolute;
+  top: 721px;
+  left: 30px;
+}
+
+#QuestionFiveMatchResult{
+  font-size: 30px;
+  font-family: Georgia, serif;
+  position: absolute;
+  top: 847px;
+  left: 30px;
+}
+
+/*big match page */
+
+#FirstMatch{
+  padding: 10px;
+  width: 1385px;
+  height: 81px;
+  position: relative;
+  border: 0px;
+  background-color: #e1d2c3;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  top: -33px;
+  left: 22px;
+  cursor: pointer;
+}
+
+#FirstMatch:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#FirstOverallMatch{
+  top: 298px;
+  left: 44px;
+  font-size: 30px;
+  font-family: Georgia, serif;
+  position: absolute;
+}
+
+#SecondMatch{
+  padding: 10px;
+  width: 1385px;
+  height: 81px;
+  position: relative;
+  border: 0px;
+  background-color: #e1d2c3;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  top: 29px;
+  left: 22px;
+  cursor: pointer;
+}
+
+#SecondMatch:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#SecondOverallMatch{
+  top: 445px;
+  left: 44px;
+  font-size: 30px;
+  font-family: Georgia, serif;
+  position: absolute;
+}
+
+#ThirdMatch{
+  padding: 10px;
+  width: 1385px;
+  height: 81px;
+  position: relative;
+  border: 0px;
+  background-color: #e1d2c3;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  top: 87px;
+  left: 22px;
+  cursor: pointer;
+}
+
+#ThirdMatch:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#ThirdOverallMatch{
+  top: 585px;
+  left: 44px;
+  font-size: 30px;
+  font-family: Georgia, serif;
+  position: absolute;
+}
+
+#FourthMatch{
+  padding: 10px;
+  width: 1385px;
+  height: 81px;
+  position: relative;
+  border: 0px;
+  background-color: #e1d2c3;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  top: 133px;
+  left: 22px;
+  cursor: pointer;
+}
+
+#FourthMatch:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#FourthOverallMatch{
+  top: 724px;
+  left: 44px;
+  font-size: 30px;
+  font-family: Georgia, serif;
+  position: absolute;
+}
+
+/*css for home bannered bit */
+
+* {
+  box-sizing: border-box;
+  border-radius: 30px;
+}
+
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+/*profile page css*/
+
+h10{
+  color: black;
+  font-size: 60px;
+  position: relative;
+  top: 9px;
+  left: 568px;
+  font-family: Georgia, serif;
+  text-align: center;
+
+}
+
+h11{
+  color: black;
+  font-size: 30px;
+  position: relative;
+  top: 25px;
+  left: 619px;
+  font-family: Georgia, serif;
+  text-align: center;
+
+}
+
+/* logout */
+.logout{
+  display:none;
+}
+
+#Logout{
+  position: relative;
+    top: 49px;
+    left: 529px;
+    left: 580px;
+    height: 47px;
+    width: 138px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    background-color: lightblue;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#Logout:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#Help{
+
+  position: relative;
+    top: 13px;
+    left: 729px;
+    height: 47px;
+    width: 138px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    background-color: lightblue;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#Help:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+h12{
+  color: black;
+  font-size: 30px;
+  position: relative;
+  top: 26px;
+  left: 518px;
+  font-family: Georgia, serif;
+  text-align: center;
+
+}
+
+#yes{
+  position: relative;
+    top: 49px;
+    left: 529px;
+    left: 580px;
+    height: 47px;
+    width: 138px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    background-color: lightblue;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#yes:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
+
+#no{
+
+  position: relative;
+    top: 1px;
+    left: 729px;
+    height: 47px;
+    width: 138px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    background-color: lightblue;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#no:hover {
+  background-color: grey;
+  box-shadow: 3px 3px 5px grey;
+}
